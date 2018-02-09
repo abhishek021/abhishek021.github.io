@@ -93,8 +93,14 @@ Comment:<br>
 <input type="reset" value="Reset">
 </fieldset>
 </form> 
-<address >Last edited on 23 August 2017<br>
+<address >Last edited on <p id="lastupdated"></p><br>
  only for educational purpose</address>
+<script>
+	$(document).ready(function(){
+		var x = new Date(document.lastModified);
+		document.getElementById("lastupdated").innerHTML = x;
+	});
+</script>
 
 </body>
 </html>
