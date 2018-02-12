@@ -1,98 +1,129 @@
 <!DOCTYPE html>
 <html><head>
 <meta http-equiv="content-type" content="text/html; charset=windows-1252"><title>Projects</title>
-<link rel="stylesheet" type="text/css" href="web.css">
-</head>
-<style>
-body {
-	padding-left: 11em;
-     font-family: Georgia, "Times New Roman",Times, serif;
-	 background-color: #888844
-}
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #204060;
-}
-b {
-position: absolute;
-    left:0px;
-    top: 5px;
-	font-family: Georgia, "Times New Roman",Times, serif;
-	font-size:28px
-}
-h1 {
-position: absolute;
-    left:420px;
-    top: 120px;
-}
-.image1 {
-    position: absolute;
-    left: 10px;
-    top: 140px;
-}
-.image2 {
-    position: absolute;
-    left: 10px;
-    top: 320px;
-}
-.image3 {
-    position: absolute;
-    left: 10px;
-    top: 480px;
-}
-.link1{
-position: absolute;
-    left: 600px;
-    top: 110px;
-}
-.link2{
-position: absolute;
-    left: 630px;
-    top: 290px;
-}
-.link3{
-position: absolute;
-    left: 420px;
-    top: 455px;
-}
-</style>
-<body>
-<b><label style="text-decoration:underline">My Projects</label></b>
-<img src="bld.jpg" class="image1" style="width:150px;height:100px;">
-<img src="rsm.jpg" class="image2" style="width:150px;height:100px;">
-<img src="oc.jpg" class="image3" style="width:150px;height:130px;">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="styles.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/js/bootstrapValidator.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+</style>
+
+</head>
+<body>
+<div style="padding-bottom:67px;">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+      <span class="navbar-brand active" style="color:white">Project List</span>
+	<ul class="nav navbar-nav navbar-right">
+			<li><a href="index.html" class="glyphicon glyphicon-home"> Home</a></li>
+  </ul>
+	</div>
+</nav>
+</div>
+<div class="container left">
+    <article class="caption">
+        <img class="caption__media" src="bank.jpg" />
+        <div class="caption__overlay">
+            <h1 class="caption__overlay__title">Banking Management System</h1>
+            <p class="caption__overlay__content">
+                The purpose of this project was to develop a desktop application
+			to manage a banking system using Java.This software includes
+			all basic functionalities of a bank and it also includes email 
+			api to inform customer about their transactions through email.
+			I have used file system to manage user database but it can be
+			ported to any database like SQl.</p>
+        </div>
+    </article>
+</div>
+<div class="container right">
+	<article class="caption">
+        <img class="caption__media" src="gst.jpg" />
+        <div class="caption__overlay">
+            <h1 class="caption__overlay__title">GST Management System</h1>
+            <p class="caption__overlay__content">
+                The purpose of this project was to design a desktop application
+			to manage Goods and Services Taxation system using Java.This application have all
+			basic functionalities that a customer/retailer need to manage his/her shop
+			efficiently.Email-api has been used to connect retailer with mailing service.
+			SQL database is used to manage retailer data and monthly turnover of retailers.</p>
+        </div>
+    </article>
+</div>
+<div class="container left">
+    <article class="caption">
+        <img class="caption__media" src="compiler.png" />
+        <div class="caption__overlay">
+            <h1 class="caption__overlay__title">Online Compiler IDE</h1>
+            <p class="caption__overlay__content">
+                The moto behind this project was to design a web based application
+		  that can be used as an online IDE to compile and execute languages like C/C++
+		  Java and Python by any individual or in any programming contest.
+		  The main idea was to link rich command line feature of a Linux 
+		  with a web page using PHP.to design front-end HTMl and CSS along-with
+		  JavaScript is used.To handle back-end database  MYSQL is used.
+		  Features like user registration and auto detect language has been also added to it.</p>
+        </div>
+    </article>
+</div>
+<div class="container right">
+	<article class="caption">
+        <img class="caption__media" src="clustering.png" />
+        <div class="caption__overlay">
+            <h1 class="caption__overlay__title">Simultaneous Clustering Using Genetic Algo.</h1>
+            <p class="caption__overlay__content">
+                This project is based on a research paper where we are working on the IRIS
+				dataset to create different clusters and calculating the Objective function
+				for further analysis.</p>
+        </div>
+    </article>
+</div>
+<div class="container left">
+	<article class="caption">
+        <img class="caption__media" src="retails.jpg" />
+        <div class="caption__overlay">
+            <h1 class="caption__overlay__title">Retail Shop Management</h1>
+            <p class="caption__overlay__content">
+                The purpose of this project was to design a desktop application
+			to manage a retail shop using Vb.net.This application have all
+			basic functionalities that a retailer need to manage his/her shop
+			efficiently.SQL database is used to manage all data.</p>
+        </div>
+    </article>
+</div>
+
+  <div class="w3-row-padding">
+    
+  </div>
+<!--
 <a class="link1" href="https://github.com/abhishek021/Banking-System" style="text-decoration:underline">Source</a>
 <a class="link2" href="https://github.com/abhishek021/RetailShopManagement" style="text-decoration:underline">Source</a>
 <a class="link3" href="https://drive.google.com/open?id=0BwOKWHk8-QYnX0xLSVJSdzJybkU" style="text-decoration:underline">Source</a>
-<ul>
-  <li><a href="index.html">Home</a></li>
-</ul>
-	<br><br>
-  <p><h2 style="text-decoration:underline">Banking Management System</h2> 
-   The purpose of this project was to develop a desktop application
-   <br>to manage a banking system using Java.This software includes
-   <br>all basic functionalities of a bank and it also includes email 
-   <br>api to inform customer about their transactions through email.</br>
-   <br><br>
-  <h2 style="text-decoration:underline">Retail Shop Management System</h2>
-   The purpose of this project was to design a desktop application
-  <br>to manage a retail shop using Vb.net.This application have all
-  <br>basic functionalities that a retailer need to manage his/her shop
-  <br>efficiently.SQL database is used to manage all data.</br>
-  <br>
-  <h2 style="text-decoration:underline">Online Compiler</h2>
-   The moto behind this project was to design a web based application
-  <br>that can be used as an online compiler for languages like C/C++
-  <br>Java and Python by any individual or in any programing contest.
-  <br>The main idea was to link rich command line feature of a linux 
-  <br>with a web page using PHP.to design front-end HTMl and CSS along-with
-  <br>JavaScript is used.To handle back-end database  MYSQL is used.
-  <br>Features like user registration and auto detect language  is added to it. 
-  </p>
+-->
 
+<footer id="footer">
+    <div class="container w3-center">
+	<p><b>For the source code of the projects, go to my Github account :</b>
+	<a href="https://github.com/abhishek021" target="_blank"><i class="fa fa-github" style="font-size:50px"></i></a></p>
+	<div class="copyright">
+        &copy; Copyright <strong>Abhishek Mishra</strong>. All Rights Reserved
+      </div>
+	</div>
+ </footer>
+<script>
+	$(document).ready(function(){
+		var x = new Date(document.lastModified);
+		document.getElementById("lastupdated").innerHTML = x;
+	});
+</script>
 </body>
 </html>

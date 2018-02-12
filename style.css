@@ -1,0 +1,67 @@
+body{
+	background-image:url("hero-bg.jpg");
+}
+.navbar {
+    height:40px;
+    background:white;
+    border-bottom:1px solid #ccc;
+    width:100%;
+    position:fixed;
+	padding-bottom:50px;
+    top:10;
+    left:0;
+    z-index:10;
+    -webkit-transition:all .3s;
+    -moz-transition:all .3s;
+    transition:all .3s;
+}
+
+#call-to-action{
+	padding-top:100px;
+}
+
+#aboutme{
+	position:right;
+}
+#footer {
+  background: #343b40;
+  padding: 5px 0;
+  color: #fff;
+  font-size: 14px;
+}
+#footer .footer-body{
+  padding-top: auto;
+  text-align: center;
+  font-size: 30px;
+  color: #ccc;
+}
+
+#call-to-action .cta-title {
+  color: black;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+#call-to-action .cta-text {
+  color: black;
+}
+
+@media (min-width: 769px) {
+  #call-to-action .cta-btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+#contact{
+	padding-top:20%;
+}
+.zoom {
+    transition: transform 2s;
+}
+
+.zoom:hover {
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Safari 3-8 */
+    transform: scale(1.5); 
+}
