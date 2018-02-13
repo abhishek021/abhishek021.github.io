@@ -1,6 +1,7 @@
 body{
 	background-image:url("hero-bg.jpg");
 }
+@import url('http://getbootstrap.com/dist/css/bootstrap.css');
 .navbar {
     height:40px;
     background:white;
@@ -46,13 +47,6 @@ body{
   color: black;
 }
 
-@media (min-width: 769px) {
-  #call-to-action .cta-btn-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-  }
-}
 #contact{
 	padding-top:20%;
 }
