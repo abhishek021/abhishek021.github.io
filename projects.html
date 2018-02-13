@@ -25,18 +25,32 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 <div style="padding-bottom:67px;">
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
-      <span class="navbar-brand active" style="color:white">Project List</span>
-	<ul class="nav navbar-nav navbar-right">
-			<li><a href="index.html" class="glyphicon glyphicon-home"> Home</a></li>
-  </ul>
-	</div>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand">duke</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+	  </ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="mycv.html">My Resume</a></li>
+			<li><a href="http://abhimishra021.blogspot.in/">My Blogs</a></li>
+			<li class="active"><a href="#">My projects</a></li>
+		</ul>
+    </div>
+  </div>
 </nav>
 </div>
-<div class="container left">
+<div class="container left card">
     <article class="caption">
         <img class="caption__media" src="bank.jpg" />
+		<h1 class="caption__overlay__title">Banking Management System</h1>
         <div class="caption__overlay">
-            <h1 class="caption__overlay__title">Banking Management System</h1>
             <p class="caption__overlay__content">
                 The purpose of this project was to develop a desktop application
 			to manage a banking system using Java.This software includes
@@ -47,11 +61,13 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
         </div>
     </article>
 </div>
-<div class="container right">
+<div class="container right card">
 	<article class="caption">
-        <img class="caption__media" src="gst.jpg" />
+		<img class="caption__media" src="gst.jpg" />
+		<div class="contain">
+			<h1 class="caption__overlay__title">GST Management System</h1>
+		</div>
         <div class="caption__overlay">
-            <h1 class="caption__overlay__title">GST Management System</h1>
             <p class="caption__overlay__content">
                 The purpose of this project was to design a desktop application
 			to manage Goods and Services Taxation system using Java.This application have all
@@ -61,27 +77,30 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
         </div>
     </article>
 </div>
-<div class="container left">
+<div class="container left card">
     <article class="caption">
         <img class="caption__media" src="compiler.png" />
-        <div class="caption__overlay">
-            <h1 class="caption__overlay__title">Online Compiler IDE</h1>
+		<div class="contain">
+			<h1 class="caption__overlay__title">Online Compiler IDE</h1>
+		</div>       
+		<div class="caption__overlay">
             <p class="caption__overlay__content">
-                The moto behind this project was to design a web based application
-		  that can be used as an online IDE to compile and execute languages like C/C++
+                It's a web based application that can be used as an online IDE to 
+				compile and execute languages like C/C++
 		  Java and Python by any individual or in any programming contest.
 		  The main idea was to link rich command line feature of a Linux 
-		  with a web page using PHP.to design front-end HTMl and CSS along-with
-		  JavaScript is used.To handle back-end database  MYSQL is used.
+		  with a web page using PHP.To handle back-end database  MYSQL is used.
 		  Features like user registration and auto detect language has been also added to it.</p>
         </div>
     </article>
 </div>
-<div class="container right">
+<div class="container right card">
 	<article class="caption">
         <img class="caption__media" src="clustering.png" />
-        <div class="caption__overlay">
-            <h1 class="caption__overlay__title">Simultaneous Clustering Using Genetic Algo.</h1>
+		<div class="contain">
+			<h1 class="caption__overlay__title">Simultaneous Clustering Using Genetic Algo.</h1>
+        </div>
+		<div class="caption__overlay">    
             <p class="caption__overlay__content">
                 This project is based on a research paper where we are working on the IRIS
 				dataset to create different clusters and calculating the Objective function
@@ -89,11 +108,13 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
         </div>
     </article>
 </div>
-<div class="container left">
+<div class="container left card">
 	<article class="caption">
         <img class="caption__media" src="retails.jpg" />
-        <div class="caption__overlay">
-            <h1 class="caption__overlay__title">Retail Shop Management</h1>
+		<div class="contain">
+			<h1 class="caption__overlay__title">Retail Shop Management</h1>
+        </div>
+		<div class="caption__overlay">
             <p class="caption__overlay__content">
                 The purpose of this project was to design a desktop application
 			to manage a retail shop using Vb.net.This application have all
@@ -103,15 +124,15 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     </article>
 </div>
 
-  <div class="w3-row-padding">
+  
     
-  </div>
+  
 <!--
 <a class="link1" href="https://github.com/abhishek021/Banking-System" style="text-decoration:underline">Source</a>
 <a class="link2" href="https://github.com/abhishek021/RetailShopManagement" style="text-decoration:underline">Source</a>
 <a class="link3" href="https://drive.google.com/open?id=0BwOKWHk8-QYnX0xLSVJSdzJybkU" style="text-decoration:underline">Source</a>
 -->
-
+<div class="w3-row">
 <footer id="footer">
     <div class="container w3-center">
 	<p><b>For the source code of the projects, go to my Github account :</b>
@@ -121,6 +142,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
       </div>
 	</div>
  </footer>
+</div>
 <script>
 	$(document).ready(function(){
 		var x = new Date(document.lastModified);
