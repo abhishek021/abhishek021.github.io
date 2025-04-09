@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <style>
     body {
       font-family: 'Raleway', sans-serif;
@@ -28,35 +29,39 @@
       border-bottom: 2px solid #007bff;
       padding-bottom: 5px;
     }
+    .section-title i {
+      margin-right: 8px;
+    }
     .info-list li {
       margin-bottom: 10px;
     }
     .timeline {
       position: relative;
       padding-left: 30px;
-    }
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 10px;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: #007bff;
+      border-left: 2px solid #007bff;
     }
     .timeline-item {
-      margin-bottom: 20px;
+      margin-bottom: 25px;
       position: relative;
+      animation: fadeInUp 0.6s ease;
     }
     .timeline-item::before {
       content: '';
       position: absolute;
-      left: -7px;
-      top: 5px;
-      width: 14px;
-      height: 14px;
+      left: -10px;
+      top: 3px;
+      width: 10px;
+      height: 10px;
       background-color: #007bff;
       border-radius: 50%;
+    }
+    .timeline-item h5 {
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .cert-badge {
+      max-height: 50px;
+      margin-right: 10px;
     }
     .dark-mode {
       background-color: #121212;
@@ -76,6 +81,10 @@
     }
     footer a {
       color: white;
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -109,7 +118,7 @@
   </div>
 
   <div class="resume-section">
-    <h3 class="section-title">Personal Details</h3>
+    <h3 class="section-title"><i class="fas fa-user"></i>Personal Details</h3>
     <ul class="list-unstyled info-list">
       <li><strong>Email:</strong> abhimishra021@gmail.com</li>
       <li><strong>Phone:</strong> +91 9771894740</li>
@@ -120,30 +129,33 @@
   </div>
 
   <div class="resume-section">
-    <h3 class="section-title">Objective</h3>
+    <h3 class="section-title"><i class="fas fa-bullseye"></i>Objective</h3>
     <p>To leverage my DevOps and software engineering skills to build scalable, reliable, and cost-efficient infrastructure for modern data and application systems while continuing to grow professionally.</p>
   </div>
 
   <div class="resume-section">
-    <h3 class="section-title">Education</h3>
+    <h3 class="section-title"><i class="fas fa-graduation-cap"></i>Education</h3>
     <div class="timeline">
       <div class="timeline-item">
-        <strong>B.E. in Computer Science</strong><br>University Institute of Technology, Burdwan University (2014–2018) – 77%
+        <h5>B.E. in Computer Science</h5>
+        <p>University Institute of Technology, Burdwan University (2014–2018) – 77%</p>
       </div>
       <div class="timeline-item">
-        <strong>Senior Secondary</strong><br>Pankti Pawan Gurukul Mahavidhyalaya, BSEB (2013) – 69.3%
+        <h5>Senior Secondary</h5>
+        <p>Pankti Pawan Gurukul Mahavidhyalaya, BSEB (2013) – 69.3%</p>
       </div>
       <div class="timeline-item">
-        <strong>Higher Secondary</strong><br>Assumption Public School, CBSE (2011) – 68.4%
+        <h5>Higher Secondary</h5>
+        <p>Assumption Public School, CBSE (2011) – 68.4%</p>
       </div>
     </div>
   </div>
 
   <div class="resume-section">
-    <h3 class="section-title">Professional Experience</h3>
+    <h3 class="section-title"><i class="fas fa-briefcase"></i>Professional Experience</h3>
     <div class="timeline">
       <div class="timeline-item">
-        <strong>DevOps Engineer – Sigmoid Analytics (2018 – Present)</strong>
+        <h5>DevOps Engineer – Sigmoid Analytics (2018 – Present)</h5>
         <ul>
           <li>Worked with Spark, Hadoop, and cloud platforms like AWS and GCP.</li>
           <li>Managed infrastructure automation with Terraform, Shell scripting, and CI/CD pipelines.</li>
@@ -154,7 +166,7 @@
   </div>
 
   <div class="resume-section">
-    <h3 class="section-title">Technical Skills</h3>
+    <h3 class="section-title"><i class="fas fa-code"></i>Technical Skills</h3>
     <ul class="row list-unstyled">
       <li class="col-md-4">Languages: Java, Python, C++, Shell, SQL</li>
       <li class="col-md-4">Cloud: AWS, Azure, GCP</li>
@@ -166,7 +178,7 @@
   </div>
 
   <div class="resume-section">
-    <h3 class="section-title">Projects</h3>
+    <h3 class="section-title"><i class="fas fa-folder-open"></i>Projects</h3>
     <ul>
       <li><strong>Banking Management System:</strong> Java desktop app with email notifications and file storage.</li>
       <li><strong>GST Management System:</strong> Java + SQL-based billing solution with email APIs.</li>
@@ -177,27 +189,22 @@
   </div>
 
   <div class="resume-section">
-    <h3 class="section-title">Achievements</h3>
+    <h3 class="section-title"><i class="fas fa-award"></i>Achievements & Certifications</h3>
     <ul>
-      <li>Completed "Data Structures & Algorithms in Python" (86%)</li>
-      <li>Trained in Core JAVA from Globsyn</li>
-      <li>Cleared TCS CodeVita Round 1 (Season V)</li>
+      <li><img src="https://img.icons8.com/color/48/000000/python.png" class="cert-badge" alt="Python Icon"/>Data Structures & Algorithms in Python – 86%</li>
+      <li><img src="https://img.icons8.com/color/48/000000/java-coffee-cup-logo.png" class="cert-badge" alt="Java Icon"/>Core JAVA training from Globsyn</li>
+      <li><img src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/48/null/external-codevita-competitive-programming-contest-powered-by-tcs-logo-shadow-tal-revivo.png" class="cert-badge" alt="CodeVita"/>Cleared TCS CodeVita Round 1 (Season V)</li>
     </ul>
   </div>
 
   <div class="resume-section">
-    <h3 class="section-title">Languages Known</h3>
+    <h3 class="section-title"><i class="fas fa-language"></i>Languages Known</h3>
     <p>Hindi, English, Bengali</p>
   </div>
 
   <div class="resume-section">
-    <h3 class="section-title">Hobbies</h3>
+    <h3 class="section-title"><i class="fas fa-headphones-alt"></i>Hobbies</h3>
     <p>Exploring technology, Reading novels, Listening to music</p>
-  </div>
-
-  <div class="resume-section">
-    <h3 class="section-title">Declaration</h3>
-    <p>I hereby declare that the above details are true to the best of my knowledge.</p>
   </div>
 </div>
 
