@@ -13,6 +13,7 @@
   <style>
     body {
       font-family: 'Roboto', sans-serif;
+      transition: background-color 0.3s, color 0.3s;
     }
     .hero {
       background: linear-gradient(135deg, #343a40, #1d2124);
@@ -35,6 +36,17 @@
       border-radius: 8px;
       margin-bottom: 20px;
     }
+    .dark-mode {
+      background-color: #121212;
+      color: #f1f1f1;
+    }
+    .dark-mode .hero {
+      background: linear-gradient(135deg, #1c1c1c, #343a40);
+    }
+    .dark-mode .testimonial {
+      background-color: #1f1f1f;
+      color: #f1f1f1;
+    }
   </style>
 </head>
 
@@ -49,8 +61,12 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="mycv.html">Resume</a></li>
-          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="resume.pdf" download>Download Resume</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+          <li class="nav-item">
+            <button class="btn btn-sm btn-outline-light ml-2" onclick="toggleDarkMode()">Toggle Theme</button>
+          </li>
         </ul>
       </div>
     </div>
@@ -62,7 +78,6 @@
       <img src="intro.jpg" class="img-fluid rounded-circle shadow mb-3" width="150" alt="Abhishek">
       <h1 class="display-4 animate__animated animate__fadeInDown">Abhishek Kumar Mishra</h1>
       <p class="lead animate__animated animate__fadeInUp">DevOps Engineer | Cloud Enthusiast | Big Data Specialist</p>
-      <a href="mycv.html" class="btn btn-outline-light btn-lg mt-3">Download Resume</a>
     </div>
   </section>
 
@@ -82,7 +97,7 @@
       <div class="col-md-3">Apache Spark, Databricks</div>
     </div>
     <div class="row text-center mt-2">
-      <div class="col-md-3">Infrastructure as Code</div>
+      <div class="col-md-3">Terraform & IaC</div>
       <div class="col-md-3">Monitoring (Prometheus/Grafana)</div>
       <div class="col-md-3">BigQuery, Airflow</div>
       <div class="col-md-3">Python & Bash</div>
@@ -90,13 +105,28 @@
   </section>
 
   <!-- Projects -->
-  <section class="container py-5">
+  <section class="container py-5" id="projects">
     <h2 class="text-center section-title">Highlighted Projects</h2>
     <ul>
       <li><strong>Platform Cost Optimization:</strong> Dashboards & alerts to reduce cloud spend across Azure/GCP.</li>
       <li><strong>Intelligent Anomaly Detection:</strong> ML-powered alerts for sales/inventory anomalies in retail.</li>
       <li><strong>Unified Catalog on Databricks:</strong> Standard schema implementation for cross-team use.</li>
     </ul>
+  </section>
+
+  <!-- Blog Section -->
+  <section class="container py-5" id="blog">
+    <h2 class="text-center section-title">Latest Blog Posts</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <h5>5 Cost Optimization Tactics for Azure</h5>
+        <p>Explore how to reduce cloud waste and gain better visibility into your Azure spending using native and third-party tools.</p>
+      </div>
+      <div class="col-md-6">
+        <h5>Getting Started with Databricks & Unity Catalog</h5>
+        <p>A hands-on walkthrough on setting up a unified governance layer and access control in Databricks for collaborative data teams.</p>
+      </div>
+    </div>
   </section>
 
   <!-- Testimonials -->
@@ -144,6 +174,9 @@
 
   <script>
     document.getElementById("lastupdated").textContent = new Date(document.lastModified).toLocaleDateString();
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
   </script>
 </body>
 </html>
