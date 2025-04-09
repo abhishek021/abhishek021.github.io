@@ -1,129 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="content-type" content="text/html; charset=windows-1252"><title>Abhishek Mishra</title>
-<link rel="stylesheet" type="text/css" href="style.css">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/js/bootstrapValidator.min.js" type="text/javascript"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<!-- <script src="contact.js"></script> -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abhishek Mishra</title>
+
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
+
 <body>
-<section>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand">duke</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-	  </ul>
-		<ul class="nav navbar-nav navbar-right">
-			<li><a href="mycv.html">My Resume</a></li>
-			<li><a href="projects.html">My projects</a></li>
-		</ul>
-    </div>
-  </div>
-</nav>
-</section>
-
-
-<div class="container" id="call-to-action">
-    <div class="row">
-        <div class="col-md-4">
-            <div class="imgAbt">
-                <img width="250" height="300" src="intro.jpg" class="center-block img-responsive" />
-            </div>
-        </div>
-        <div class="col-md-8">
-			<h3 class="cta-title text-center">Abhishek Kumar Mishra</h3>
-            <p class="cta-text text-center">Working as a DevOps Engineer in a Big Data based startup Sigmoid Analytics <a href="https://www.sigmoid.com/" target="_blank" class="fa fa-briefcase w3-hover-opacity zoom"></a>
-			<br>Undergraduate in Computer science and Engineering(Batch of 2014-18)
-			<br><br>I love reading novels and tech-news. I am very much passionate
-			about Computer Science and technology.Along with these I also like to spend 
-			time with my play-list.</p>
-		</div>
-    </div>
-</div>
-<section>
-  <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
-    <h2 class="w3-wide w3-center">CONTACT ME</h2>
-        <form id="contact-form" action="contact.php" name="contact-form" method="post" role="form">
-		<div class="messages"></div>
-          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-            <div class="w3-half">
-              <input class="w3-input w3-border" type="text" placeholder="Name" required name="name">
-            </div>
-            <div class="w3-half">
-              <input class="w3-input w3-border" type="text" placeholder="Email" required name="email">
-            </div>
-          </div>
-          <textarea class="w3-input w3-border" type="text" id="message" placeholder="//under construction" required name="message"></textarea>
-          <button class="w3-button w3-black w3-section w3-right" type="submit" name="submit">SEND</button>
-        </form>
-  </div>
-</section>
-
-<address style="color:white">
-	<i>Last updated on:</i> <p id="lastupdated"></p>
-</address>
-
-<footer id="footer">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
     <div class="container">
-		<h2 class="w3-wide w3-center">follow me</h2>
-		<div class="footer-body">
-			<a href="https://www.facebook.com/Mishraji021" target="_blank" class="fa fa-facebook-official w3-hover-opacity zoom"></a>
-			<a href="https://twitter.com/jr_abhishek_" target="_blank" class="fa fa-twitter w3-hover-opacity zoom"></a>
-			<a href="https://www.linkedin.com/in/abhi021/" target="_blank" class="fa fa-linkedin w3-hover-opacity zoom"></a>
-			<a href="https://plus.google.com/u/0/+abhishekmishra021" target="_blank" class="fa fa-google-plus-official w3-hover-opacity zoom"></a>
-		</div>
-		<div class="copyright">
-        &copy; Copyright <strong>Abhishek Mishra</strong>. All Rights Reserved
+      <a class="navbar-brand" href="#">Abhishek</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="mycv.html">Resume</a></li>
+          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+        </ul>
       </div>
-	</div>
- </footer>
+    </div>
+  </nav>
 
-<script>
-$(document).ready(function(){
-		var x = new Date(document.lastModified);
-		document.getElementById("lastupdated").innerHTML = x;
-		
-/*
-		$('#contact-form').on('submit', function (e) {
-			
-			e.preventDefault();
-            var url = "contact.php";
-			
-            // POST values in the background the the script URL
-            $.ajax({
-                method: "POST",
-                url: url,
-                data: $('#contact-form').serialize(),
-                success: function (data)
-                {			
-                        //$('#messageModal').find('.messages').html(data);
-                        //$('#insert_form')[0].reset();
-						//$('#registerModal').modal('hide');
-						//$('#messageModal').modal();
-						alert(data);
-                }
-            });
-    });
-	*/
-});
-</script>
+  <!-- Main Section -->
+  <div class="container mt-5 pt-5">
+    <div class="row align-items-center">
+      <div class="col-md-4 text-center">
+        <img src="intro.jpg" alt="Abhishek Photo" class="img-fluid rounded shadow" width="250" height="300">
+      </div>
+      <div class="col-md-8">
+        <h3 class="text-center">Abhishek Kumar Mishra</h3>
+        <p class="text-center">
+          DevOps Engineer at <a href="https://www.sigmoid.com/" target="_blank">Sigmoid Analytics</a><br>
+          B.Tech in Computer Science and Engineering (Batch of 2014-2018)
+        </p>
+        <p class="text-center">
+          Passionate about technology and computer science. Love reading novels, catching up on tech news,
+          and relaxing with a good playlist.
+        </p>
+      </div>
+    </div>
+  </div>
 
+  <!-- Contact Section -->
+  <section id="contact" class="w3-container w3-padding-64">
+    <div class="container">
+      <h2 class="text-center mb-4">Contact Me</h2>
+      <form id="contact-form" action="contact.php" method="post">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <input type="text" class="form-control" name="name" placeholder="Name" required>
+          </div>
+          <div class="form-group col-md-6">
+            <input type="email" class="form-control" name="email" placeholder="Email" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" name="message" rows="5" placeholder="Your message..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-dark float-right">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white mt-5 p-4 text-center">
+    <div>
+      <h5>Follow Me</h5>
+      <a href="https://www.facebook.com/Mishraji021" target="_blank" class="text-white m-2"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com/jr_abhishek_" target="_blank" class="text-white m-2"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.linkedin.com/in/abhi021/" target="_blank" class="text-white m-2"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://plus.google.com/u/0/+abhishekmishra021" target="_blank" class="text-white m-2"><i class="fab fa-google-plus-g"></i></a>
+    </div>
+    <p class="mt-3 mb-0">&copy; <strong>Abhishek Mishra</strong>. All Rights Reserved</p>
+    <p class="mb-0"><i>Last updated on: <span id="lastupdated"></span></i></p>
+  </footer>
+
+  <script>
+    document.getElementById("lastupdated").textContent = new Date(document.lastModified).toLocaleDateString();
+  </script>
 </body>
 </html>
