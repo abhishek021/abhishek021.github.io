@@ -25,10 +25,10 @@
   color:var(--teal);
 }
 .rs-card ul{list-style:none}
-.rs-card li{color:var(--ink-dim);font-size:.93rem;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.rs-card li{color:var(--ink-dim);font-size:.93rem;padding:7px 0;border-bottom:1px solid rgba(22,33,58,.07)}
 .rs-card li:last-child{border-bottom:none}
 .rs-card li b{color:var(--ink);font-weight:600}
-.edu-item{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.edu-item{padding:10px 0;border-bottom:1px solid rgba(22,33,58,.07)}
 .edu-item:last-child{border-bottom:none}
 .edu-item h4{font-weight:700;font-size:.98rem;color:var(--ink)}
 .edu-item p{color:var(--ink-dim);font-size:.86rem}
@@ -47,6 +47,9 @@
 </style>
 </head>
 <body>
+
+<div class="progress" aria-hidden="true"></div>
+<div class="cursor-glow" aria-hidden="true"></div>
 
 <div class="sky" aria-hidden="true"></div>
 <div class="grid" aria-hidden="true"></div>
@@ -233,6 +236,8 @@
 
 </main>
 
+<a class="to-top" href="#" aria-label="Back to top">↑</a>
+
 <footer>
   <div class="container">
     <p>© 2026 Abhishek Mishra. All rights reserved.</p>
@@ -240,21 +245,6 @@
   </div>
 </footer>
 
-<script>
-const toggle=document.querySelector('.nav-toggle');
-const links=document.querySelector('.nav-links');
-toggle.addEventListener('click',()=>{
-  const open=links.classList.toggle('open');
-  toggle.setAttribute('aria-expanded',open);
-});
-links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
-  links.classList.remove('open');toggle.setAttribute('aria-expanded','false');
-}));
-const reveals=document.querySelectorAll('.reveal');
-const ro=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}});
-},{threshold:.1});
-reveals.forEach(el=>ro.observe(el));
-</script>
+<script src="theme.js"></script>
 </body>
 </html>

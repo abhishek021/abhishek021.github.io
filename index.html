@@ -12,6 +12,9 @@
 </head>
 <body>
 
+<div class="progress" aria-hidden="true"></div>
+<div class="cursor-glow" aria-hidden="true"></div>
+
 <div class="sky" aria-hidden="true"></div>
 <div class="grid" aria-hidden="true"></div>
 
@@ -32,7 +35,7 @@
 <header class="hero">
   <div class="container hero-inner">
     <span class="chip"><span class="dot"></span>SOLUTION ARCHITECT · 2026</span>
-    <h1>Architecting data platforms<br/>that <span class="grad">think at scale.</span></h1>
+    <h1>Architecting data platforms<br/>that <span class="typed-wrap"><span class="grad typed" data-phrases='["think at scale.","govern themselves.","heal themselves.","run lights-out."]'>think at scale.</span><span class="caret" aria-hidden="true"></span></span></h1>
     <p class="hero-role">Abhishek Mishra <span>//</span> Solution Architect — Big Data Platforms &amp; AI Systems</p>
     <p class="hero-sub">
       Eight years of building and running production data platforms — from Hadoop clusters and
@@ -246,6 +249,8 @@
 
 </main>
 
+<a class="to-top" href="#" aria-label="Back to top">↑</a>
+
 <footer>
   <div class="container">
     <p>© 2026 Abhishek Mishra. All rights reserved.</p>
@@ -253,44 +258,6 @@
   </div>
 </footer>
 
-<script>
-// mobile nav
-const toggle=document.querySelector('.nav-toggle');
-const links=document.querySelector('.nav-links');
-toggle.addEventListener('click',()=>{
-  const open=links.classList.toggle('open');
-  toggle.setAttribute('aria-expanded',open);
-});
-links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
-  links.classList.remove('open');toggle.setAttribute('aria-expanded','false');
-}));
-
-// scroll reveal
-const reveals=document.querySelectorAll('.reveal');
-const ro=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}});
-},{threshold:.15});
-reveals.forEach(el=>ro.observe(el));
-
-// counters
-const counters=document.querySelectorAll('.num');
-const co=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(!entry.isIntersecting)return;
-    const el=entry.target;
-    const target=+el.dataset.count;
-    const suffix=el.dataset.suffix||'';
-    const dur=1200,start=performance.now();
-    const tick=now=>{
-      const p=Math.min((now-start)/dur,1);
-      el.textContent=Math.round(target*(1-Math.pow(1-p,3)))+suffix;
-      if(p<1)requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
-    co.unobserve(el);
-  });
-},{threshold:.6});
-counters.forEach(el=>co.observe(el));
-</script>
+<script src="theme.js"></script>
 </body>
 </html>

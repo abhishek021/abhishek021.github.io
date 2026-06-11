@@ -15,13 +15,13 @@
 .page-head h1{font-size:clamp(2.2rem,5vw,3.4rem)}
 .controls{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:36px}
 .search{
-  flex:1;min-width:240px;background:rgba(7,11,20,.5);
+  flex:1;min-width:240px;background:#fff;
   border:1px solid var(--stroke);border-radius:999px;
   color:var(--ink);font-family:var(--font-body);font-size:.92rem;
   padding:12px 22px;transition:border-color .2s,box-shadow .2s;
 }
 .search::placeholder{color:var(--ink-faint)}
-.search:focus{outline:none;border-color:var(--stroke-bright);box-shadow:0 0 0 3px rgba(53,224,198,.1)}
+.search:focus{outline:none;border-color:var(--stroke-bright);box-shadow:0 0 0 3px rgba(13,157,140,.12)}
 .filters{display:flex;gap:8px;flex-wrap:wrap}
 .f-btn{
   font-family:var(--font-mono);font-size:.74rem;letter-spacing:.08em;
@@ -29,7 +29,7 @@
   border-radius:999px;padding:9px 18px;cursor:pointer;transition:all .2s;
 }
 .f-btn:hover{color:var(--ink);border-color:var(--stroke-bright)}
-.f-btn.on{color:#04221d;background:linear-gradient(95deg,var(--teal),#5fd6e8);border-color:transparent;font-weight:500}
+.f-btn.on{color:#fff;background:linear-gradient(95deg,#0d9d8c,#0a98b8);border-color:transparent;font-weight:500}
 .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .proj{display:flex;flex-direction:column;overflow:hidden}
 .proj-banner{
@@ -39,10 +39,10 @@
 .proj-banner .glyph{font-size:2.2rem;z-index:1}
 .proj-banner .id{font-family:var(--font-mono);font-size:.68rem;color:var(--ink-faint);letter-spacing:.14em;z-index:1}
 .proj-banner::before{content:'';position:absolute;inset:0;opacity:.9}
-.proj[data-category="platform"] .proj-banner::before{background:radial-gradient(120% 160% at 0% 0%,rgba(53,224,198,.22),transparent 60%)}
-.proj[data-category="data"] .proj-banner::before{background:radial-gradient(120% 160% at 0% 0%,rgba(139,124,246,.24),transparent 60%)}
-.proj[data-category="finops"] .proj-banner::before{background:radial-gradient(120% 160% at 0% 0%,rgba(232,183,90,.2),transparent 60%)}
-.proj[data-category="early"] .proj-banner::before{background:radial-gradient(120% 160% at 0% 0%,rgba(174,186,205,.16),transparent 60%)}
+.proj[data-category="platform"] .proj-banner::before{background:radial-gradient(120% 160% at 0% 0%,rgba(13,157,140,.10),transparent 60%)}
+.proj[data-category="data"] .proj-banner::before{background:radial-gradient(120% 160% at 0% 0%,rgba(109,91,224,.10),transparent 60%)}
+.proj[data-category="finops"] .proj-banner::before{background:radial-gradient(120% 160% at 0% 0%,rgba(184,135,20,.08),transparent 60%)}
+.proj[data-category="early"] .proj-banner::before{background:radial-gradient(120% 160% at 0% 0%,rgba(125,138,158,.10),transparent 60%)}
 .proj-body{padding:22px 24px 26px;display:flex;flex-direction:column;flex:1}
 .proj-body .cat{
   font-family:var(--font-mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;
@@ -69,6 +69,9 @@
 </style>
 </head>
 <body>
+
+<div class="progress" aria-hidden="true"></div>
+<div class="cursor-glow" aria-hidden="true"></div>
 
 <div class="sky" aria-hidden="true"></div>
 <div class="grid" aria-hidden="true"></div>
@@ -215,6 +218,8 @@
 </section>
 </main>
 
+<a class="to-top" href="#" aria-label="Back to top">↑</a>
+
 <footer>
   <div class="container">
     <p>© 2026 Abhishek Mishra. All rights reserved.</p>
@@ -222,22 +227,8 @@
   </div>
 </footer>
 
+<script src="theme.js"></script>
 <script>
-const toggle=document.querySelector('.nav-toggle');
-const links=document.querySelector('.nav-links');
-toggle.addEventListener('click',()=>{
-  const open=links.classList.toggle('open');
-  toggle.setAttribute('aria-expanded',open);
-});
-links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
-  links.classList.remove('open');toggle.setAttribute('aria-expanded','false');
-}));
-const reveals=document.querySelectorAll('.reveal');
-const ro=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}});
-},{threshold:.08});
-reveals.forEach(el=>ro.observe(el));
-
 // filter + search
 const buttons=document.querySelectorAll('.f-btn');
 const items=document.querySelectorAll('.proj');
@@ -263,6 +254,7 @@ buttons.forEach(btn=>btn.addEventListener('click',()=>{
   apply();
 }));
 search.addEventListener('input',apply);
+
 </script>
 </body>
 </html>
