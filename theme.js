@@ -170,3 +170,20 @@
     drawRails();
   }
 })();
+
+/* ---------- contact form → mailto (static hosting) ---------- */
+(() => {
+  const form = document.getElementById('contact-form');
+  if (!form || !form.dataset.mailto) return;
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const name = form.querySelector('[name="name"]').value.trim();
+    const email = form.querySelector('[name="email"]').value.trim();
+    const message = form.querySelector('[name="message"]').value.trim();
+    const subject = encodeURIComponent(`Website inquiry from ${name}`);
+    const body = encodeURIComponent(`${message}\n\n— ${name}\n${email}`);
+    const note = document.getElementById('form-note');
+    if (note) note.classList.add('show');
+    location.href = `mailto:${form.dataset.mailto}?subject=${subject}&body=${body}`;
+  });
+})();
