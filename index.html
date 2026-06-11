@@ -1,199 +1,296 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abhishek Mishra</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-    }
-    .hero {
-      background: linear-gradient(135deg, #1f1f1f, #343a40);
-      color: white;
-      padding: 100px 0 60px;
-      text-align: center;
-    }
-    .section {
-      padding: 60px 0;
-    }
-    .section-title {
-      font-weight: 700;
-      margin-bottom: 40px;
-      text-align: center;
-      position: relative;
-    }
-    .section-title::after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 4px;
-      background: #007bff;
-      margin: 10px auto 0;
-    }
-    .counter {
-      font-size: 2.5rem;
-      font-weight: bold;
-    }
-    .tech-carousel img {
-      max-height: 50px;
-      margin: 0 20px;
-      filter: grayscale(100%);
-      transition: filter 0.3s;
-    }
-    .tech-carousel img:hover {
-      filter: none;
-    }
-    .fab-button {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: #007bff;
-      color: white;
-      border-radius: 50%;
-      padding: 15px;
-      font-size: 20px;
-      z-index: 1000;
-      cursor: pointer;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Abhishek Mishra — Solution Architect</title>
+<meta name="description" content="Abhishek Mishra — Solution Architect for Big Data Platforms & AI Systems. Platform Engineering, Data Engineering, DataOps, AI Engineering." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="theme.css">
 </head>
 <body>
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">Abhishek</a>
-      <button class="navbar-toggler" data-toggle="collapse" data-target="#nav"><span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="nav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
-          <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
-          <li class="nav-item"><a href="mycv.html" class="nav-link">Resume</a></li>
-        </ul>
+
+<div class="sky" aria-hidden="true"></div>
+<div class="grid" aria-hidden="true"></div>
+
+<nav aria-label="Main">
+  <a class="brand" href="#">abhishek<b>.mishra</b></a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  <ul class="nav-links">
+    <li><a href="#" class="active">Home</a></li>
+    <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#journey">Journey</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="mycv.html">Resume</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="container hero-inner">
+    <span class="chip"><span class="dot"></span>SOLUTION ARCHITECT · 2026</span>
+    <h1>Architecting data platforms<br/>that <span class="grad">think at scale.</span></h1>
+    <p class="hero-role">Abhishek Mishra <span>//</span> Solution Architect — Big Data Platforms &amp; AI Systems</p>
+    <p class="hero-sub">
+      Eight years of building and running production data platforms — from Hadoop clusters and
+      DevOps automation to Databricks lakehouses, governed Unity Catalog estates, and AI-powered
+      data operations across AWS, Azure, and GCP.
+    </p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="projects.html">View projects →</a>
+      <a class="btn btn-ghost" href="#contact">Get in touch</a>
+    </div>
+  </div>
+
+  <!-- ambient pipeline schematic -->
+  <svg class="flow" viewBox="0 0 520 380" aria-hidden="true">
+    <path class="lane" d="M30,70 C140,70 160,150 270,150 C380,150 400,90 490,90"/>
+    <path class="lane" d="M30,190 C140,190 160,190 270,190 C380,190 400,190 490,190"/>
+    <path class="lane" d="M30,310 C140,310 160,230 270,230 C380,230 400,290 490,290"/>
+    <path class="pulse p1" d="M30,70 C140,70 160,150 270,150 C380,150 400,90 490,90"/>
+    <path class="pulse p2" d="M30,190 C140,190 160,190 270,190 C380,190 400,190 490,190"/>
+    <path class="pulse p3" d="M30,310 C140,310 160,230 270,230 C380,230 400,290 490,290"/>
+    <circle class="node" cx="30" cy="70" r="7"/>
+    <circle class="node" cx="30" cy="190" r="7"/>
+    <circle class="node" cx="30" cy="310" r="7"/>
+    <rect class="node" x="248" y="168" width="44" height="44" rx="12"/>
+    <circle class="node" cx="490" cy="90" r="7"/>
+    <circle class="node" cx="490" cy="190" r="7"/>
+    <circle class="node" cx="490" cy="290" r="7"/>
+    <text x="18" y="48">SOURCES</text>
+    <text x="236" y="240">LAKEHOUSE</text>
+    <text x="448" y="68">ANALYTICS</text>
+    <text x="448" y="168">ML / AI</text>
+    <text x="448" y="320">APPS</text>
+  </svg>
+</header>
+
+<main>
+
+<!-- ================= STATS ================= -->
+<section class="section" style="padding-top:20px">
+  <div class="container">
+    <div class="stats">
+      <div class="card stat reveal"><div class="num" data-count="8">0</div><p>Years engineering platforms</p></div>
+      <div class="card stat reveal"><div class="num" data-count="20" data-suffix="+">0</div><p>Projects delivered</p></div>
+      <div class="card stat reveal"><div class="num" data-count="3">0</div><p>Clouds — AWS · Azure · GCP</p></div>
+      <div class="card stat reveal"><div class="num" data-count="8">0</div><p>Certifications</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERTISE ================= -->
+<section class="section" id="expertise">
+  <div class="container">
+    <p class="eyebrow reveal">// What I do</p>
+    <h2 class="reveal">Four disciplines, one platform mindset</h2>
+    <p class="section-lead reveal">I design and review architectures end to end — from the infrastructure that runs the platform to the AI systems that run on top of it.</p>
+    <div class="pillars">
+      <div class="card pillar reveal">
+        <div class="glyph">⬢</div>
+        <h3>Platform Engineering</h3>
+        <p>Governed, cost-optimized lakehouse foundations — Unity Catalog, Databricks Asset Bundles, zero-touch CI/CD, Kubernetes, and infrastructure as code across Azure and GCP.</p>
+      </div>
+      <div class="card pillar reveal">
+        <div class="glyph">⛁</div>
+        <h3>Data Engineering</h3>
+        <p>Medallion architectures at TB scale — Delta Lake, declarative pipelines, Autoloader, Spark optimization, and orchestration with Airflow and Azure Data Factory.</p>
+      </div>
+      <div class="card pillar reveal">
+        <div class="glyph">◉</div>
+        <h3>Data Operations</h3>
+        <p>Reliability as a discipline — observability, data freshness SLAs, incident runbooks, self-healing pipelines, and root-cause automation for production data estates.</p>
+      </div>
+      <div class="card pillar reveal">
+        <div class="glyph">✦</div>
+        <h3>AI Engineering</h3>
+        <p>LLMOps and agentic systems grounded in real platforms — RAG over enterprise metadata, AI-assisted analytics with Databricks Genie, and governed GenAI delivery.</p>
       </div>
     </div>
-  </nav>
+  </div>
+</section>
 
-  <section class="hero">
-    <div class="container">
-      <img src="intro.jpg" class="rounded-circle mb-3" width="150" alt="Abhishek" />
-      <h1 class="display-4">Abhishek Kumar Mishra</h1>
-      <p class="lead">DevOps Engineer | Cloud Architect | DataOps Enthusiast</p>
-    </div>
-  </section>
-
-  <section class="section text-center bg-light">
-    <div class="container">
-      <h2 class="section-title">My Numbers</h2>
-      <div class="row">
-        <div class="col-md-3"><div class="counter" data-count="6">0</div><p>Years Experience</p></div>
-        <div class="col-md-3"><div class="counter" data-count="20">0</div><p>Projects Delivered</p></div>
-        <div class="col-md-3"><div class="counter" data-count="8">0</div><p>Certifications</p></div>
-        <div class="col-md-3"><div class="counter" data-count="10">0</div><p>Blog Articles</p></div>
+<!-- ================= JOURNEY ================= -->
+<section class="section" id="journey">
+  <div class="container">
+    <p class="eyebrow reveal">// The pipeline</p>
+    <h2 class="reveal">Bronze → Silver → Gold</h2>
+    <p class="section-lead reveal">Like the data I work with, the career has been refined layer by layer — eight years at Sigmoid, from the terminal to the architecture board.</p>
+    <div class="journey">
+      <div class="rail" aria-hidden="true"></div>
+      <div class="stop bronze reveal">
+        <span class="node" aria-hidden="true"></span>
+        <span class="when">2018 — 2019</span><span class="tier b">BRONZE · RAW</span>
+        <h3>Technical Support Engineer</h3>
+        <p>Deployed and managed GCP and AWS Hadoop clusters running Spark ETL — scripting, monitoring, and keeping thousand-node estates alive 24/7.</p>
+      </div>
+      <div class="stop bronze reveal">
+        <span class="node" aria-hidden="true"></span>
+        <span class="when">2019 — 2021</span><span class="tier b">BRONZE · RAW</span>
+        <h3>DevOps Engineer</h3>
+        <p>Built and secured AWS Hadoop platforms at TB scale — zero-trust networking, bastion architectures, Grafana auditing, and PoCs that brought Delta Lake into the stack.</p>
+      </div>
+      <div class="stop silver reveal">
+        <span class="node" aria-hidden="true"></span>
+        <span class="when">2021 — 2022</span><span class="tier s">SILVER · REFINED</span>
+        <h3>DevOps Engineer II</h3>
+        <p>Migrated Python pipelines to Databricks — ACID transactions, schema evolution, Delta optimization over billions of rows, and Airflow-orchestrated job clusters.</p>
+      </div>
+      <div class="stop silver reveal">
+        <span class="node" aria-hidden="true"></span>
+        <span class="when">2023</span><span class="tier s">SILVER · REFINED</span>
+        <h3>Senior Data Operations Engineer</h3>
+        <p>Owned production reliability for enterprise data pipelines — performance, monitoring, and operational excellence across cloud data estates.</p>
+      </div>
+      <div class="stop gold reveal">
+        <span class="node" aria-hidden="true"></span>
+        <span class="when">2024 — 2025</span><span class="tier g">GOLD · CURATED</span>
+        <h3>Data Operations &amp; Engineering Lead</h3>
+        <p>Led delivery across data engineering and operations — team leadership, client-facing architecture, and platform modernization on Databricks, Azure, and GCP.</p>
+      </div>
+      <div class="stop gold reveal">
+        <span class="node" aria-hidden="true"></span>
+        <span class="when">2026 — Present</span><span class="tier g">GOLD · CURATED</span>
+        <h3>Solution Architect</h3>
+        <p>Designing and reviewing scalable, reliable architectures for big data platforms and AI systems — spanning platform engineering, data engineering, data operations, and AI engineering.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section tech-carousel text-center">
-    <div class="container">
-      <h2 class="section-title">Tech Stack</h2>
-      <div class="d-flex justify-content-center flex-wrap">
-        <img src="https://img.icons8.com/color/48/000000/docker.png"/>
-        <img src="https://img.icons8.com/color/48/000000/kubernetes.png"/>
-        <img src="https://img.icons8.com/color/48/000000/terraform.png"/>
-        <img src="https://img.icons8.com/color/48/000000/azure-1.png"/>
-        <img src="https://img.icons8.com/color/48/000000/amazon-web-services.png"/>
-        <img src="https://img.icons8.com/color/48/000000/google-cloud.png"/>
-        <img src="https://img.icons8.com/color/48/000000/python.png"/>
-        <img src="https://img.icons8.com/color/48/000000/apache-spark.png"/>
+<!-- ================= STACK ================= -->
+<section class="section" id="stack">
+  <div class="container">
+    <p class="eyebrow reveal">// The stack</p>
+    <h2 class="reveal">Tools of the trade</h2>
+    <p class="section-lead reveal">Chosen per problem, governed by default.</p>
+    <div class="stack-groups">
+      <div class="card stack-card reveal">
+        <h3>Data Platform</h3>
+        <div class="chips">
+          <span class="t-chip">Databricks</span><span class="t-chip">Unity Catalog</span>
+          <span class="t-chip">Delta Lake</span><span class="t-chip">Apache Spark</span>
+          <span class="t-chip">Airflow</span><span class="t-chip">Hadoop</span>
+        </div>
+      </div>
+      <div class="card stack-card reveal">
+        <h3>Cloud &amp; Infrastructure</h3>
+        <div class="chips">
+          <span class="t-chip">AWS</span><span class="t-chip">Azure</span><span class="t-chip">GCP</span>
+          <span class="t-chip">Kubernetes</span><span class="t-chip">Terraform</span><span class="t-chip">Docker</span>
+        </div>
+      </div>
+      <div class="card stack-card reveal">
+        <h3>DevOps &amp; Delivery</h3>
+        <div class="chips">
+          <span class="t-chip">GitHub Actions</span><span class="t-chip">Azure DevOps</span>
+          <span class="t-chip">Databricks Asset Bundles</span><span class="t-chip">CI/CD</span>
+          <span class="t-chip">ELK Stack</span><span class="t-chip">Grafana</span>
+        </div>
+      </div>
+      <div class="card stack-card reveal">
+        <h3>AI &amp; Languages</h3>
+        <div class="chips">
+          <span class="t-chip">Python</span><span class="t-chip">SQL</span><span class="t-chip">Shell</span>
+          <span class="t-chip">GenAI / LLMOps</span><span class="t-chip">MLOps</span><span class="t-chip">RAG</span>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section text-center">
-    <div class="container">
-      <h2 class="section-title">Vision</h2>
-      <blockquote class="blockquote">
-        <p class="mb-0">“Obsessed with automation. Passionate about performance. Focused on impact.”</p>
+<!-- ================= VISION ================= -->
+<section class="section">
+  <div class="container">
+    <div class="card vision reveal">
+      <blockquote>
+        "Obsessed with <em>automation</em>. Passionate about <em>performance</em>.<br/>Focused on <em>impact</em>."
       </blockquote>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section bg-light text-center">
-    <div class="container">
-      <h2 class="section-title">Certifications</h2>
-      <div class="row justify-content-center">
-        <div class="col-md-2"><img src="https://img.icons8.com/color/96/000000/azure-1.png" alt="Azure Fundamentals" class="img-fluid"></div>
-        <div class="col-md-2"><img src="https://img.icons8.com/color/96/000000/google-cloud.png" alt="GCP ACE" class="img-fluid"></div>
-        <div class="col-md-2"><img src="https://img.icons8.com/color/96/000000/linux.png" alt="Linux" class="img-fluid"></div>
+<!-- ================= CONTACT ================= -->
+<section class="section" id="contact">
+  <div class="container">
+    <p class="eyebrow reveal">// Contact</p>
+    <h2 class="reveal">Let's build something governed, scalable &amp; smart</h2>
+    <p class="section-lead reveal">Open to collaborations, mentoring, and speaking engagements on platform engineering, DataOps culture, FinOps governance, and cloud-native data &amp; AI practices.</p>
+    <div class="contact-grid">
+      <div class="card contact-card reveal">
+        <h3>Find me</h3>
+        <p>Bengaluru, India — usually somewhere between a Databricks workspace and an architecture diagram.</p>
+        <ul class="c-links">
+          <li><a href="mailto:mishraabhishek.mishra021@gmail.com"><span class="ic">✉</span>mishraabhishek.mishra021@gmail.com</a></li>
+          <li><a href="https://www.linkedin.com/in/abhi021" target="_blank" rel="noopener"><span class="ic">in</span>linkedin.com/in/abhi021</a></li>
+          <li><a href="https://github.com/abhishek021" target="_blank" rel="noopener"><span class="ic">&lt;/&gt;</span>github.com/abhishek021</a></li>
+        </ul>
+      </div>
+      <div class="card contact-card reveal">
+        <h3>Send a message</h3>
+        <form id="contact-form" action="contact.php" method="post">
+          <div class="row">
+            <input type="text" name="name" placeholder="Name" required aria-label="Name">
+            <input type="email" name="email" placeholder="Email" required aria-label="Email">
+          </div>
+          <textarea name="message" rows="5" placeholder="Your message..." required aria-label="Your message"></textarea>
+          <button type="submit" class="btn btn-primary">Send message →</button>
+        </form>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section bg-white">
-    <div class="container">
-      <h2 class="section-title text-center">About My Work</h2>
-      <p class="text-center w-75 mx-auto">
-        With over 6 years of experience in engineering modern, scalable, and secure platforms, I specialize in delivering end-to-end automation across DevOps, MLOps, and DataOps pipelines. My current focus is on building governance-enabled, cost-optimized data platforms using tools like Databricks, Airflow, Azure/GCP, and Kubernetes. I actively architect solutions that support secure CI/CD, ML lifecycle management, observability, and cloud-native transformation for global clients.
-      </p>
-    </div>
-  </section>
+</main>
 
-  <section class="section bg-light" id="contact">
-    <div class="container text-center">
-      <h2 class="section-title">Contact Me</h2>
-      <p class="w-75 mx-auto">
-        I'm open to collaborations, mentoring, and speaking engagements related to DevOps culture, FinOps governance, and cloud-native data engineering practices. Drop me a message below or connect on LinkedIn.
-      </p>
-      <form id="contact-form" action="contact.php" method="post" class="mt-4">
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <input type="text" class="form-control" name="name" placeholder="Name" required>
-          </div>
-          <div class="form-group col-md-6">
-            <input type="email" class="form-control" name="email" placeholder="Email" required>
-          </div>
-        </div>
-        <div class="form-group">
-          <textarea class="form-control" name="message" rows="5" placeholder="Your message..." required></textarea>
-        </div>
-        <button type="submit" class="btn btn-dark">Send</button>
-      </form>
-    </div>
-  </section>
+<footer>
+  <div class="container">
+    <p>© 2026 Abhishek Mishra. All rights reserved.</p>
+    <p class="sig">status: <b>● architecting</b></p>
+  </div>
+</footer>
 
-  <a class="fab-button" href="#contact" title="Contact Me"><i class="fas fa-envelope"></i></a>
+<script>
+// mobile nav
+const toggle=document.querySelector('.nav-toggle');
+const links=document.querySelector('.nav-links');
+toggle.addEventListener('click',()=>{
+  const open=links.classList.toggle('open');
+  toggle.setAttribute('aria-expanded',open);
+});
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  links.classList.remove('open');toggle.setAttribute('aria-expanded','false');
+}));
 
-  <footer class="text-center bg-dark text-white p-4 mt-5">
-    <p>&copy; 2024 Abhishek Mishra. All Rights Reserved.</p>
-  </footer>
+// scroll reveal
+const reveals=document.querySelectorAll('.reveal');
+const ro=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}});
+},{threshold:.15});
+reveals.forEach(el=>ro.observe(el));
 
-  <script>
-    // Counter animation
-    const counters = document.querySelectorAll('.counter');
-    const speed = 200;
-    counters.forEach(counter => {
-      const updateCount = () => {
-        const target = +counter.getAttribute('data-count');
-        const count = +counter.innerText;
-        const inc = target / speed;
-        if(count < target) {
-          counter.innerText = Math.ceil(count + inc);
-          setTimeout(updateCount, 20);
-        } else {
-          counter.innerText = target;
-        }
-      };
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if(entry.isIntersecting) updateCount();
-        });
-      }, { threshold: 0.7 });
-      observer.observe(counter);
-    });
-  </script>
+// counters
+const counters=document.querySelectorAll('.num');
+const co=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(!entry.isIntersecting)return;
+    const el=entry.target;
+    const target=+el.dataset.count;
+    const suffix=el.dataset.suffix||'';
+    const dur=1200,start=performance.now();
+    const tick=now=>{
+      const p=Math.min((now-start)/dur,1);
+      el.textContent=Math.round(target*(1-Math.pow(1-p,3)))+suffix;
+      if(p<1)requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+    co.unobserve(el);
+  });
+},{threshold:.6});
+counters.forEach(el=>co.observe(el));
+</script>
 </body>
 </html>

@@ -1,169 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Projects | Abhishek Mishra</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-  <style>
-    body {
-      font-family: 'Raleway', sans-serif;
-      background-color: #f8f9fa;
-      padding-top: 70px;
-    }
-    .project-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-    }
-    .project-img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-    .project-body {
-      padding: 20px;
-      background-color: white;
-    }
-    .project-title {
-      font-size: 1.3rem;
-      font-weight: bold;
-    }
-    footer {
-      background-color: #343a40;
-      color: white;
-      padding: 20px 0;
-    }
-    footer a {
-      color: white;
-    }
-    .filter-buttons {
-      margin-bottom: 30px;
-    }
-    .filter-buttons button {
-      margin: 5px;
-    }
-    .search-input {
-      margin-bottom: 30px;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Projects — Abhishek Mishra</title>
+<meta name="description" content="Projects by Abhishek Mishra — data platform, FinOps, and engineering work." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="theme.css">
+<style>
+/* ---- page-specific: projects ---- */
+.page-head{padding:160px 0 40px}
+.page-head h1{font-size:clamp(2.2rem,5vw,3.4rem)}
+.controls{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:36px}
+.search{
+  flex:1;min-width:240px;background:rgba(7,11,20,.5);
+  border:1px solid var(--stroke);border-radius:999px;
+  color:var(--ink);font-family:var(--font-body);font-size:.92rem;
+  padding:12px 22px;transition:border-color .2s,box-shadow .2s;
+}
+.search::placeholder{color:var(--ink-faint)}
+.search:focus{outline:none;border-color:var(--stroke-bright);box-shadow:0 0 0 3px rgba(53,224,198,.1)}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.f-btn{
+  font-family:var(--font-mono);font-size:.74rem;letter-spacing:.08em;
+  color:var(--ink-dim);background:var(--glass);border:1px solid var(--stroke);
+  border-radius:999px;padding:9px 18px;cursor:pointer;transition:all .2s;
+}
+.f-btn:hover{color:var(--ink);border-color:var(--stroke-bright)}
+.f-btn.on{color:#04221d;background:linear-gradient(95deg,var(--teal),#5fd6e8);border-color:transparent;font-weight:500}
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.proj{display:flex;flex-direction:column;overflow:hidden}
+.proj-banner{
+  height:120px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 24px;border-bottom:1px solid var(--stroke);position:relative;overflow:hidden;
+}
+.proj-banner .glyph{font-size:2.2rem;z-index:1}
+.proj-banner .id{font-family:var(--font-mono);font-size:.68rem;color:var(--ink-faint);letter-spacing:.14em;z-index:1}
+.proj-banner::before{content:'';position:absolute;inset:0;opacity:.9}
+.proj[data-category="platform"] .proj-banner::before{background:radial-gradient(120% 160% at 0% 0%,rgba(53,224,198,.22),transparent 60%)}
+.proj[data-category="data"] .proj-banner::before{background:radial-gradient(120% 160% at 0% 0%,rgba(139,124,246,.24),transparent 60%)}
+.proj[data-category="finops"] .proj-banner::before{background:radial-gradient(120% 160% at 0% 0%,rgba(232,183,90,.2),transparent 60%)}
+.proj[data-category="early"] .proj-banner::before{background:radial-gradient(120% 160% at 0% 0%,rgba(174,186,205,.16),transparent 60%)}
+.proj-body{padding:22px 24px 26px;display:flex;flex-direction:column;flex:1}
+.proj-body .cat{
+  font-family:var(--font-mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--teal);margin-bottom:8px;
+}
+.proj[data-category="finops"] .cat{color:var(--gold)}
+.proj[data-category="data"] .cat{color:var(--violet)}
+.proj[data-category="early"] .cat{color:var(--silver)}
+.proj-body h3{font-family:var(--font-display);font-weight:700;font-size:1.08rem;margin-bottom:8px}
+.proj-body p{color:var(--ink-dim);font-size:.89rem;flex:1}
+.proj-body .tools{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.proj-body .tools span{
+  font-family:var(--font-mono);font-size:.66rem;color:var(--ink-faint);
+  border:1px solid var(--stroke);border-radius:6px;padding:3px 8px;
+}
+.gh-cta{text-align:center;margin-top:56px}
+.gh-cta p{color:var(--ink-dim);margin-bottom:18px}
+.empty{
+  display:none;text-align:center;color:var(--ink-faint);
+  font-family:var(--font-mono);font-size:.85rem;padding:60px 0;
+}
+@media (max-width:1000px){.proj-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.proj-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">Abhishek</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        </ul>
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="mycv.html">My Resume</a></li>
-          <li class="nav-item active"><a class="nav-link" href="#">My Projects</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
-  <div class="container py-5">
-    <h1 class="text-center mb-4">My Projects</h1>
+<div class="sky" aria-hidden="true"></div>
+<div class="grid" aria-hidden="true"></div>
 
-    <div class="text-center filter-buttons">
-      <input type="text" id="searchInput" class="form-control search-input d-inline-block w-50" placeholder="Search projects...">
-      <div class="btn-group mt-3">
-        <button class="btn btn-outline-primary" onclick="filterProjects('all')">All</button>
-        <button class="btn btn-outline-secondary" onclick="filterProjects('java')">Java</button>
-        <button class="btn btn-outline-secondary" onclick="filterProjects('web')">Web</button>
-        <button class="btn btn-outline-secondary" onclick="filterProjects('research')">Research</button>
-      </div>
-    </div>
+<nav aria-label="Main">
+  <a class="brand" href="index.html">abhishek<b>.mishra</b></a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#" class="active">Projects</a></li>
+    <li><a href="mycv.html">Resume</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
 
-    <div class="row" id="projectsGrid">
-      <div class="col-md-4 mb-4 project-item" data-category="java">
-        <div class="project-card">
-          <img src="bank.jpg" class="project-img" alt="Banking Management System">
-          <div class="project-body">
-            <h3 class="project-title">Banking Management System</h3>
-            <p>Java-based desktop banking app with email alerts and file/SQL backend.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4 project-item" data-category="java">
-        <div class="project-card">
-          <img src="gst.jpg" class="project-img" alt="GST Management System">
-          <div class="project-body">
-            <h3 class="project-title">GST Management System</h3>
-            <p>Java app for GST handling with SQL database and email API integration.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4 project-item" data-category="web">
-        <div class="project-card">
-          <img src="compiler.png" class="project-img" alt="Online Compiler IDE">
-          <div class="project-body">
-            <h3 class="project-title">Online Compiler IDE</h3>
-            <p>Online IDE supporting C/C++, Java, Python. Built with HTML, PHP, MySQL.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4 project-item" data-category="research">
-        <div class="project-card">
-          <img src="clustering.png" class="project-img" alt="Clustering with Genetic Algorithm">
-          <div class="project-body">
-            <h3 class="project-title">Clustering using Genetic Algorithm</h3>
-            <p>Research project on IRIS dataset clustering using evolutionary techniques.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4 project-item" data-category="web">
-        <div class="project-card">
-          <img src="retails.jpg" class="project-img" alt="Retail Shop Management">
-          <div class="project-body">
-            <h3 class="project-title">Retail Shop Management</h3>
-            <p>VB.NET retail management app with SQL backend for data operations.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="text-center mt-5">
-      <p>Find all project source codes on GitHub:</p>
-      <a href="https://github.com/abhishek021" target="_blank"><i class="fa fa-github" style="font-size:40px;"></i></a>
-    </div>
+<header class="page-head">
+  <div class="container">
+    <p class="eyebrow">// Projects</p>
+    <h1>Things I've <span class="grad" style="background:linear-gradient(95deg,var(--teal),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent">built &amp; shipped</span></h1>
+    <p class="hero-sub" style="max-width:640px">
+      From governed lakehouse platforms and FinOps tooling to the Java and web projects
+      where it all started.
+    </p>
   </div>
+</header>
 
-  <footer class="text-center">
-    <div class="container">
-      <p>&copy; <strong>Abhishek Mishra</strong>. All Rights Reserved</p>
+<main>
+<section class="section" style="padding-top:10px">
+  <div class="container">
+
+    <div class="controls reveal">
+      <input type="text" id="searchInput" class="search" placeholder="Search projects..." aria-label="Search projects">
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button class="f-btn on" data-filter="all">ALL</button>
+        <button class="f-btn" data-filter="platform">PLATFORM</button>
+        <button class="f-btn" data-filter="data">DATA ENG</button>
+        <button class="f-btn" data-filter="finops">FINOPS</button>
+        <button class="f-btn" data-filter="early">EARLY WORK</button>
+      </div>
     </div>
-  </footer>
 
-  <script>
-    function filterProjects(category) {
-      const items = document.querySelectorAll('.project-item');
-      items.forEach(item => {
-        item.style.display = category === 'all' || item.dataset.category === category ? 'block' : 'none';
-      });
-    }
+    <div class="proj-grid" id="projectsGrid">
 
-    document.getElementById('searchInput').addEventListener('input', function() {
-      const query = this.value.toLowerCase();
-      const items = document.querySelectorAll('.project-item');
-      items.forEach(item => {
-        const text = item.innerText.toLowerCase();
-        item.style.display = text.includes(query) ? 'block' : 'none';
-      });
-    });
-  </script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <div class="card proj reveal" data-category="platform">
+        <div class="proj-banner"><span class="glyph">⬢</span><span class="id">PRJ-001</span></div>
+        <div class="proj-body">
+          <p class="cat">Platform Engineering</p>
+          <h3>Platform360</h3>
+          <p>Standardized Databricks catalog architecture for multi-team data access — a single governed entry point with Unity Catalog enabling cross-team discovery, permissions, and lineage.</p>
+          <div class="tools"><span>Databricks</span><span>Unity Catalog</span><span>Governance</span></div>
+        </div>
+      </div>
+
+      <div class="card proj reveal" data-category="finops">
+        <div class="proj-banner"><span class="glyph">◈</span><span class="id">PRJ-002</span></div>
+        <div class="proj-body">
+          <p class="cat">FinOps</p>
+          <h3>Cross-Cloud Cost Normalization</h3>
+          <p>POC normalizing usage and billing data across Azure and GCP using the FOCUS framework — one consistent cost model and dashboards for cloud spend decisions.</p>
+          <div class="tools"><span>FOCUS</span><span>Azure</span><span>GCP</span><span>Power BI</span></div>
+        </div>
+      </div>
+
+      <div class="card proj reveal" data-category="data">
+        <div class="proj-banner"><span class="glyph">⇄</span><span class="id">PRJ-003</span></div>
+        <div class="proj-body">
+          <p class="cat">Data Engineering</p>
+          <h3>Real-Time Oracle → Databricks Sync</h3>
+          <p>Real-time ingestion pipeline from Oracle into the Databricks lakehouse, built on Mulesoft and Airflow orchestration with Delta Lake as the landing layer.</p>
+          <div class="tools"><span>Mulesoft</span><span>Airflow</span><span>Delta Lake</span><span>Oracle</span></div>
+        </div>
+      </div>
+
+      <div class="card proj reveal" data-category="platform">
+        <div class="proj-banner"><span class="glyph">⛁</span><span class="id">PRJ-004</span></div>
+        <div class="proj-body">
+          <p class="cat">Platform Engineering</p>
+          <h3>TB-Scale Hadoop Estates on AWS</h3>
+          <p>Built and secured multi-customer Hadoop clusters running TB-scale ETL — zero-trust networking, bastion architecture, Grafana log auditing, and Kubernetes-based monitoring.</p>
+          <div class="tools"><span>Hadoop</span><span>AWS</span><span>Kubernetes</span><span>Grafana</span></div>
+        </div>
+      </div>
+
+      <div class="card proj reveal" data-category="early">
+        <div class="proj-banner"><span class="glyph">{ }</span><span class="id">PRJ-005</span></div>
+        <div class="proj-body">
+          <p class="cat">Early Work · Web</p>
+          <h3>Online Compiler IDE</h3>
+          <p>Browser-based IDE supporting C/C++, Java, and Python compilation, built with PHP, MySQL, and vanilla HTML/CSS/JS.</p>
+          <div class="tools"><span>PHP</span><span>MySQL</span><span>JavaScript</span></div>
+        </div>
+      </div>
+
+      <div class="card proj reveal" data-category="early">
+        <div class="proj-banner"><span class="glyph">◬</span><span class="id">PRJ-006</span></div>
+        <div class="proj-body">
+          <p class="cat">Early Work · Research</p>
+          <h3>Clustering with Genetic Algorithms</h3>
+          <p>Research project applying evolutionary techniques to cluster the IRIS dataset — fitness-driven centroid optimization vs. classical k-means.</p>
+          <div class="tools"><span>Python</span><span>Genetic Algorithms</span><span>ML</span></div>
+        </div>
+      </div>
+
+      <div class="card proj reveal" data-category="early">
+        <div class="proj-banner"><span class="glyph">₿</span><span class="id">PRJ-007</span></div>
+        <div class="proj-body">
+          <p class="cat">Early Work · Java</p>
+          <h3>Banking Management System</h3>
+          <p>Java desktop banking application with email alerts and a file/SQL backend for account and transaction management.</p>
+          <div class="tools"><span>Java</span><span>SQL</span><span>Email API</span></div>
+        </div>
+      </div>
+
+      <div class="card proj reveal" data-category="early">
+        <div class="proj-banner"><span class="glyph">▤</span><span class="id">PRJ-008</span></div>
+        <div class="proj-body">
+          <p class="cat">Early Work · Java</p>
+          <h3>GST Management System</h3>
+          <p>Java application for GST handling with SQL database and email API integration for compliance workflows.</p>
+          <div class="tools"><span>Java</span><span>SQL</span><span>Email API</span></div>
+        </div>
+      </div>
+
+      <div class="card proj reveal" data-category="early">
+        <div class="proj-banner"><span class="glyph">▦</span><span class="id">PRJ-009</span></div>
+        <div class="proj-body">
+          <p class="cat">Early Work · Desktop</p>
+          <h3>Retail Shop Management</h3>
+          <p>VB.NET retail management application with a SQL backend covering inventory, billing, and daily store operations.</p>
+          <div class="tools"><span>VB.NET</span><span>SQL</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="empty" id="emptyState">// no projects match — try a different search</p>
+
+    <div class="gh-cta reveal">
+      <p>All open source work lives on GitHub.</p>
+      <a class="btn btn-ghost" href="https://github.com/abhishek021" target="_blank" rel="noopener">github.com/abhishek021 →</a>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Abhishek Mishra. All rights reserved.</p>
+    <p class="sig">status: <b>● architecting</b></p>
+  </div>
+</footer>
+
+<script>
+const toggle=document.querySelector('.nav-toggle');
+const links=document.querySelector('.nav-links');
+toggle.addEventListener('click',()=>{
+  const open=links.classList.toggle('open');
+  toggle.setAttribute('aria-expanded',open);
+});
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  links.classList.remove('open');toggle.setAttribute('aria-expanded','false');
+}));
+const reveals=document.querySelectorAll('.reveal');
+const ro=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}});
+},{threshold:.08});
+reveals.forEach(el=>ro.observe(el));
+
+// filter + search
+const buttons=document.querySelectorAll('.f-btn');
+const items=document.querySelectorAll('.proj');
+const search=document.getElementById('searchInput');
+const empty=document.getElementById('emptyState');
+let activeFilter='all';
+function apply(){
+  const q=search.value.toLowerCase();
+  let visible=0;
+  items.forEach(item=>{
+    const matchF=activeFilter==='all'||item.dataset.category===activeFilter;
+    const matchQ=item.innerText.toLowerCase().includes(q);
+    const show=matchF&&matchQ;
+    item.style.display=show?'':'none';
+    if(show)visible++;
+  });
+  empty.style.display=visible?'none':'block';
+}
+buttons.forEach(btn=>btn.addEventListener('click',()=>{
+  buttons.forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  activeFilter=btn.dataset.filter;
+  apply();
+}));
+search.addEventListener('input',apply);
+</script>
 </body>
 </html>
