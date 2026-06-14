@@ -4,236 +4,166 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Projects — Abhishek Mishra</title>
-<meta name="description" content="Projects by Abhishek Mishra — data platform, FinOps, and engineering work." />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230d9d8c'/%3E%3Cstop offset='1' stop-color='%236d5be0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='36' font-weight='700' fill='white' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
-<meta name="theme-color" content="#f6f8fb">
+<meta name="description" content="Projects by Abhishek Mishra — agentic AI systems, data platforms, and engineering work." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d9d8c'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='36' font-weight='700' fill='white' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#f7f8fa">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Abhishek Mishra">
 <meta property="og:title" content="Projects — Abhishek Mishra">
-<meta property="og:description" content="Projects by Abhishek Mishra — data platform, FinOps, and engineering work.">
+<meta property="og:description" content="Projects by Abhishek Mishra — agentic AI systems, data platforms, and engineering work.">
 <meta property="og:url" content="https://abhishek021.github.io/projects.html">
 <meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="theme.css">
-<style>
-/* ---- page-specific: projects ---- */
-.page-head{padding:160px 0 40px}
-.page-head h1{font-size:clamp(2.2rem,5vw,3.4rem)}
-.controls{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:36px}
-.search{
-  flex:1;min-width:240px;background:#fff;
-  border:1px solid var(--stroke);border-radius:999px;
-  color:var(--ink);font-family:var(--font-body);font-size:.92rem;
-  padding:12px 22px;transition:border-color .2s,box-shadow .2s;
-}
-.search::placeholder{color:var(--ink-faint)}
-.search:focus{outline:none;border-color:var(--stroke-bright);box-shadow:0 0 0 3px rgba(13,157,140,.12)}
-.filters{display:flex;gap:8px;flex-wrap:wrap}
-.f-btn{
-  font-family:var(--font-mono);font-size:.74rem;letter-spacing:.08em;
-  color:var(--ink-dim);background:var(--glass);border:1px solid var(--stroke);
-  border-radius:999px;padding:9px 18px;cursor:pointer;transition:all .2s;
-}
-.f-btn:hover{color:var(--ink);border-color:var(--stroke-bright)}
-.f-btn.on{color:#fff;background:linear-gradient(95deg,#0d9d8c,#0a98b8);border-color:transparent;font-weight:500}
-.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.proj{display:flex;flex-direction:column;overflow:hidden}
-.proj-banner{
-  height:120px;display:flex;align-items:center;justify-content:space-between;
-  padding:0 24px;border-bottom:1px solid var(--stroke);position:relative;overflow:hidden;
-}
-.proj-banner .glyph{font-size:2.2rem;z-index:1}
-.proj-banner .id{font-family:var(--font-mono);font-size:.68rem;color:var(--ink-faint);letter-spacing:.14em;z-index:1}
-.proj-banner::before{content:'';position:absolute;inset:0;opacity:.9}
-.proj[data-category="platform"] .proj-banner::before{background:radial-gradient(120% 160% at 0% 0%,rgba(13,157,140,.10),transparent 60%)}
-.proj[data-category="data"] .proj-banner::before{background:radial-gradient(120% 160% at 0% 0%,rgba(109,91,224,.10),transparent 60%)}
-.proj[data-category="finops"] .proj-banner::before{background:radial-gradient(120% 160% at 0% 0%,rgba(184,135,20,.08),transparent 60%)}
-.proj[data-category="early"] .proj-banner::before{background:radial-gradient(120% 160% at 0% 0%,rgba(125,138,158,.10),transparent 60%)}
-.proj-body{padding:22px 24px 26px;display:flex;flex-direction:column;flex:1}
-.proj-body .cat{
-  font-family:var(--font-mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--teal);margin-bottom:8px;
-}
-.proj[data-category="finops"] .cat{color:var(--gold)}
-.proj[data-category="data"] .cat{color:var(--violet)}
-.proj[data-category="early"] .cat{color:var(--silver)}
-.proj-body h3{font-family:var(--font-display);font-weight:700;font-size:1.08rem;margin-bottom:8px}
-.proj-body p{color:var(--ink-dim);font-size:.89rem;flex:1}
-.proj-body .tools{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
-.proj-body .tools span{
-  font-family:var(--font-mono);font-size:.66rem;color:var(--ink-faint);
-  border:1px solid var(--stroke);border-radius:6px;padding:3px 8px;
-}
-.gh-cta{text-align:center;margin-top:56px}
-.gh-cta p{color:var(--ink-dim);margin-bottom:18px}
-.empty{
-  display:none;text-align:center;color:var(--ink-faint);
-  font-family:var(--font-mono);font-size:.85rem;padding:60px 0;
-}
-@media (max-width:1000px){.proj-grid{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:640px){.proj-grid{grid-template-columns:1fr}}
-</style>
 </head>
 <body>
-
 <div class="progress" aria-hidden="true"></div>
 <div class="cursor-glow" aria-hidden="true"></div>
 
-<div class="sky" aria-hidden="true"></div>
-<div class="grid" aria-hidden="true"></div>
-
-<nav aria-label="Main">
-  <a class="brand" href="index.html">abhishek<b>.mishra</b></a>
-  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="#" class="active">Projects</a></li>
-    <li><a href="mycv.html">Resume</a></li>
-    <li><a href="index.html#contact">Contact</a></li>
-  </ul>
-</nav>
-
-<header class="page-head">
-  <div class="container">
-    <p class="eyebrow">// Projects</p>
-    <h1>Things I've <span class="grad" style="background:linear-gradient(95deg,var(--teal),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent">built &amp; shipped</span></h1>
-    <p class="hero-sub" style="max-width:640px">
-      From governed lakehouse platforms and FinOps tooling to the Java and web projects
-      where it all started.
-    </p>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html">abhishek<b>.mishra</b></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <nav><ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#expertise">Expertise</a></li>
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="mycv.html">Resume</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul></nav>
   </div>
 </header>
-
 <main>
-<section class="section" style="padding-top:10px">
-  <div class="container">
+<section class="rs-head" style="padding-bottom:24px">
+  <div class="wrap">
+    <p class="eyebrow">// Projects</p>
+    <h1>Selected work</h1>
+    <p class="hero-sub" style="max-width:640px;margin-bottom:0">Production agentic-AI systems and data platforms — plus the engineering and web projects where it started.</p>
+  </div>
+</section>
 
+<section style="padding-top:30px">
+  <div class="wrap">
     <div class="controls reveal">
       <input type="text" id="searchInput" class="search" placeholder="Search projects..." aria-label="Search projects">
       <div class="filters" role="group" aria-label="Filter projects">
         <button class="f-btn on" data-filter="all">ALL</button>
+        <button class="f-btn" data-filter="ai">AGENTIC AI</button>
         <button class="f-btn" data-filter="platform">PLATFORM</button>
-        <button class="f-btn" data-filter="data">DATA ENG</button>
-        <button class="f-btn" data-filter="finops">FINOPS</button>
         <button class="f-btn" data-filter="early">EARLY WORK</button>
       </div>
     </div>
 
-    <div class="proj-grid" id="projectsGrid">
-
+    <div class="grid-3" id="projectsGrid">
+      <div class="card proj reveal" data-category="ai">
+        <p class="cat">Agentic AI</p>
+        <h3>Agentic Order Management System</h3>
+        <p>Multi-agent platform built with LangChain and LangGraph (state management and workflow orchestration), with specialized order-management and support agents composed via subgraphs, nodes, and edges; instrumented with LangSmith and MLflow for tracing and prompt/session-level evaluation.</p>
+        <div class="stack"><span>LangChain</span><span>LangGraph</span><span>LangSmith</span><span>MLflow</span><span>Agentic AI</span></div>
+      </div>
+      <div class="card proj reveal" data-category="ai">
+        <p class="cat">Enterprise RAG</p>
+        <h3>Permission-Aware Enterprise RAG Platform</h3>
+        <p>Multi-source retrieval with identity-scoped access control — enterprise knowledge access that enforces who is allowed to see what, across heterogeneous sources.</p>
+        <div class="stack"><span>RAG</span><span>LangGraph</span><span>AI Agents</span><span>Agentic Workflows</span></div>
+      </div>
+      <div class="card proj reveal" data-category="ai">
+        <p class="cat">DevEx / CI-CD</p>
+        <h3>AI Code Review in CI/CD</h3>
+        <p>Automated PR-review agent gating builds — an AI reviewer wired directly into the pipeline, enforcing standards on every change before merge.</p>
+        <div class="stack"><span>ADO</span><span>Build Pipelines</span><span>AI Agents</span><span>MCP</span><span>Python</span></div>
+      </div>
       <div class="card proj reveal" data-category="platform">
-        <div class="proj-banner"><span class="glyph">⬢</span><span class="id">PRJ-001</span></div>
-        <div class="proj-body">
-          <p class="cat">Platform Engineering</p>
-          <h3>Platform360</h3>
-          <p>Standardized Databricks catalog architecture for multi-team data access — a single governed entry point with Unity Catalog enabling cross-team discovery, permissions, and lineage.</p>
-          <div class="tools"><span>Databricks</span><span>Unity Catalog</span><span>Governance</span></div>
-        </div>
+        <p class="cat">Self-Serve Analytics</p>
+        <h3>Databricks Genie Space</h3>
+        <p>Designed the semantic layer — ontology, measures, functions, business logic, context — enabling business users to query data in natural language, with benchmarking and monitoring of output quality and usage.</p>
+        <div class="stack"><span>Databricks</span><span>Databricks Genie</span><span>Ontology</span><span>Benchmarking</span></div>
       </div>
-
-      <div class="card proj reveal" data-category="finops">
-        <div class="proj-banner"><span class="glyph">◈</span><span class="id">PRJ-002</span></div>
-        <div class="proj-body">
-          <p class="cat">FinOps</p>
-          <h3>Cross-Cloud Cost Normalization</h3>
-          <p>POC normalizing usage and billing data across Azure and GCP using the FOCUS framework — one consistent cost model and dashboards for cloud spend decisions.</p>
-          <div class="tools"><span>FOCUS</span><span>Azure</span><span>GCP</span><span>Power BI</span></div>
-        </div>
-      </div>
-
-      <div class="card proj reveal" data-category="data">
-        <div class="proj-banner"><span class="glyph">⇄</span><span class="id">PRJ-003</span></div>
-        <div class="proj-body">
-          <p class="cat">Data Engineering</p>
-          <h3>Real-Time Oracle → Databricks Sync</h3>
-          <p>Real-time ingestion pipeline from Oracle into the Databricks lakehouse, built on Mulesoft and Airflow orchestration with Delta Lake as the landing layer.</p>
-          <div class="tools"><span>Mulesoft</span><span>Airflow</span><span>Delta Lake</span><span>Oracle</span></div>
-        </div>
-      </div>
-
       <div class="card proj reveal" data-category="platform">
-        <div class="proj-banner"><span class="glyph">⛁</span><span class="id">PRJ-004</span></div>
-        <div class="proj-body">
-          <p class="cat">Platform Engineering</p>
-          <h3>TB-Scale Hadoop Estates on AWS</h3>
-          <p>Built and secured multi-customer Hadoop clusters running TB-scale ETL — zero-trust networking, bastion architecture, Grafana log auditing, and Kubernetes-based monitoring.</p>
-          <div class="tools"><span>Hadoop</span><span>AWS</span><span>Kubernetes</span><span>Grafana</span></div>
-        </div>
+        <p class="cat">Platform Engineering</p>
+        <h3>Self-Healing Data Pipeline</h3>
+        <p>Deterministic supervisor plus LLM repair agents with policy-driven schema governance — Bronze immutability and drift classification — so pipelines recover automatically without breaking governance.</p>
+        <div class="stack"><span>LangGraph</span><span>LangChain</span><span>Python</span><span>Governance</span></div>
       </div>
-
       <div class="card proj reveal" data-category="early">
-        <div class="proj-banner"><span class="glyph">{ }</span><span class="id">PRJ-005</span></div>
-        <div class="proj-body">
-          <p class="cat">Early Work · Web</p>
-          <h3>Online Compiler IDE</h3>
-          <p>Browser-based IDE supporting C/C++, Java, and Python compilation, built with PHP, MySQL, and vanilla HTML/CSS/JS.</p>
-          <div class="tools"><span>PHP</span><span>MySQL</span><span>JavaScript</span></div>
-        </div>
+        <p class="cat">Early Work · Web</p>
+        <h3>Online Compiler IDE</h3>
+        <p>Browser-based IDE supporting C/C++, Java, and Python compilation, built with PHP, MySQL, and vanilla HTML/CSS/JS.</p>
+        <div class="stack"><span>PHP</span><span>MySQL</span><span>JavaScript</span></div>
       </div>
-
       <div class="card proj reveal" data-category="early">
-        <div class="proj-banner"><span class="glyph">◬</span><span class="id">PRJ-006</span></div>
-        <div class="proj-body">
-          <p class="cat">Early Work · Research</p>
-          <h3>Clustering with Genetic Algorithms</h3>
-          <p>Research project applying evolutionary techniques to cluster the IRIS dataset — fitness-driven centroid optimization vs. classical k-means.</p>
-          <div class="tools"><span>Python</span><span>Genetic Algorithms</span><span>ML</span></div>
-        </div>
+        <p class="cat">Early Work · Research</p>
+        <h3>Clustering with Genetic Algorithms</h3>
+        <p>Research project applying evolutionary techniques to cluster the IRIS dataset — fitness-driven centroid optimization compared against classical k-means.</p>
+        <div class="stack"><span>Python</span><span>Genetic Algorithms</span><span>ML</span></div>
       </div>
-
       <div class="card proj reveal" data-category="early">
-        <div class="proj-banner"><span class="glyph">₿</span><span class="id">PRJ-007</span></div>
-        <div class="proj-body">
-          <p class="cat">Early Work · Java</p>
-          <h3>Banking Management System</h3>
-          <p>Java desktop banking application with email alerts and a file/SQL backend for account and transaction management.</p>
-          <div class="tools"><span>Java</span><span>SQL</span><span>Email API</span></div>
-        </div>
+        <p class="cat">Early Work · Java</p>
+        <h3>Banking Management System</h3>
+        <p>Java desktop banking application with email alerts and a file/SQL backend for account and transaction management.</p>
+        <div class="stack"><span>Java</span><span>SQL</span><span>Email API</span></div>
       </div>
-
       <div class="card proj reveal" data-category="early">
-        <div class="proj-banner"><span class="glyph">▤</span><span class="id">PRJ-008</span></div>
-        <div class="proj-body">
-          <p class="cat">Early Work · Java</p>
-          <h3>GST Management System</h3>
-          <p>Java application for GST handling with SQL database and email API integration for compliance workflows.</p>
-          <div class="tools"><span>Java</span><span>SQL</span><span>Email API</span></div>
-        </div>
+        <p class="cat">Early Work · Java</p>
+        <h3>GST Management System</h3>
+        <p>Java application for GST handling with a SQL database and email API integration for compliance workflows.</p>
+        <div class="stack"><span>Java</span><span>SQL</span><span>Email API</span></div>
       </div>
-
       <div class="card proj reveal" data-category="early">
-        <div class="proj-banner"><span class="glyph">▦</span><span class="id">PRJ-009</span></div>
-        <div class="proj-body">
-          <p class="cat">Early Work · Desktop</p>
-          <h3>Retail Shop Management</h3>
-          <p>VB.NET retail management application with a SQL backend covering inventory, billing, and daily store operations.</p>
-          <div class="tools"><span>VB.NET</span><span>SQL</span></div>
-        </div>
+        <p class="cat">Early Work · Desktop</p>
+        <h3>Retail Shop Management</h3>
+        <p>VB.NET retail management application with a SQL backend covering inventory, billing, and daily store operations.</p>
+        <div class="stack"><span>VB.NET</span><span>SQL</span></div>
       </div>
-
     </div>
-
     <p class="empty" id="emptyState">// no projects match — try a different search</p>
 
-    <div class="gh-cta reveal">
-      <p>All open source work lives on GitHub.</p>
+    <div style="text-align:center;margin-top:48px" class="reveal">
+      <p style="color:var(--ink-soft);margin-bottom:16px">More open-source work lives on GitHub.</p>
       <a class="btn btn-ghost" href="https://github.com/abhishek021" target="_blank" rel="noopener">github.com/abhishek021 →</a>
     </div>
-
   </div>
 </section>
+
+<script>
+(() => {
+  const buttons = document.querySelectorAll('.f-btn');
+  const items = document.querySelectorAll('.proj');
+  const search = document.getElementById('searchInput');
+  const empty = document.getElementById('emptyState');
+  let activeFilter = 'all';
+  function apply() {
+    const q = search.value.toLowerCase();
+    let visible = 0;
+    items.forEach(item => {
+      const matchF = activeFilter === 'all' || item.dataset.category === activeFilter;
+      const matchQ = item.innerText.toLowerCase().includes(q);
+      const show = matchF && matchQ;
+      item.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    empty.style.display = visible ? 'none' : 'block';
+  }
+  buttons.forEach(btn => btn.addEventListener('click', () => {
+    buttons.forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+    activeFilter = btn.dataset.filter;
+    apply();
+  }));
+  search.addEventListener('input', apply);
+})();
+</script>
 </main>
-
 <a class="to-top" href="#" aria-label="Back to top">↑</a>
-
 <footer>
-  <div class="container">
+  <div class="wrap">
     <div class="f-cols">
       <div>
         <a class="brand" href="index.html">abhishek<b>.mishra</b></a>
-        <p class="blurb">Solution Architect — designing governed, scalable, and reliable data &amp; AI platforms.</p>
+        <p class="blurb">Solutions Architect — designing scalable, governed data &amp; AI platforms, and bringing agentic AI into production.</p>
       </div>
       <div>
         <h4>Site</h4>
@@ -259,35 +189,6 @@
     </div>
   </div>
 </footer>
-
 <script src="theme.js"></script>
-<script>
-// filter + search
-const buttons=document.querySelectorAll('.f-btn');
-const items=document.querySelectorAll('.proj');
-const search=document.getElementById('searchInput');
-const empty=document.getElementById('emptyState');
-let activeFilter='all';
-function apply(){
-  const q=search.value.toLowerCase();
-  let visible=0;
-  items.forEach(item=>{
-    const matchF=activeFilter==='all'||item.dataset.category===activeFilter;
-    const matchQ=item.innerText.toLowerCase().includes(q);
-    const show=matchF&&matchQ;
-    item.style.display=show?'':'none';
-    if(show)visible++;
-  });
-  empty.style.display=visible?'none':'block';
-}
-buttons.forEach(btn=>btn.addEventListener('click',()=>{
-  buttons.forEach(b=>b.classList.remove('on'));
-  btn.classList.add('on');
-  activeFilter=btn.dataset.filter;
-  apply();
-}));
-search.addEventListener('input',apply);
-
-</script>
 </body>
 </html>
