@@ -77,6 +77,30 @@
     counters.forEach(el => co.observe(el));
   }
 
+  /* click-to-copy buttons */
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const text = btn.dataset.copy || '';
+      const done = () => {
+        const orig = btn.textContent;
+        btn.textContent = 'Copied ✓';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 1600);
+      };
+      try {
+        if (navigator.clipboard && isSecureContext) {
+          await navigator.clipboard.writeText(text);
+        } else {
+          const ta = document.createElement('textarea');
+          ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+          document.body.appendChild(ta); ta.select();
+          document.execCommand('copy'); document.body.removeChild(ta);
+        }
+        done();
+      } catch (e) { /* clipboard blocked — link still works */ }
+    });
+  });
+
   /* contact form → mailto */
   const form = document.getElementById('contact-form');
   if (form && form.dataset.mailto) {

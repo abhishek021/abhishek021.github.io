@@ -319,3 +319,16 @@ header.nav,main,footer{position:relative;z-index:1}
 }
 @media (hover:none){.cursor-glow{display:none}}
 @media (max-width:560px){.marquee-track span{gap:32px;padding:0 16px}}
+
+/* ---------- contact: click-to-copy email ---------- */
+.c-email{display:flex;align-items:center;gap:10px}
+.c-email a{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis}
+.copy-btn{
+  flex-shrink:0;font-family:var(--font-mono);font-size:.68rem;letter-spacing:.06em;
+  color:var(--ink-soft);background:var(--bg);border:1px solid var(--line);
+  border-radius:7px;padding:5px 11px;cursor:pointer;transition:all .18s;
+}
+.copy-btn:hover{border-color:var(--accent);color:var(--accent)}
+.copy-btn.copied{background:var(--accent);color:#fff;border-color:var(--accent)}
+.form-note a{color:var(--accent);text-decoration:none}
+.form-note a:hover{text-decoration:underline}
