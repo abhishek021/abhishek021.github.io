@@ -1,55 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Resume — Abhishek Mishra</title>
-<meta name="description" content="Resume of Abhishek Mishra — Solutions Architect at Sigmoid. AI Solutions & Intelligent Data Platforms, agentic AI, Databricks & Spark." />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d9d8c'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='36' font-weight='700' fill='white' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
-<meta name="theme-color" content="#f7f8fa">
+<meta name="description" content="Resume of Abhishek Mishra — Solutions Architect at Sigmoid. AI solutions & intelligent data platforms, agentic AI, Databricks & Spark." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232dd4bf'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='36' font-weight='700' fill='%23062b25' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#0a0a0c">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Abhishek Mishra">
 <meta property="og:title" content="Resume — Abhishek Mishra">
-<meta property="og:description" content="Resume of Abhishek Mishra — Solutions Architect at Sigmoid. AI Solutions & Intelligent Data Platforms, agentic AI, Databricks & Spark.">
+<meta property="og:description" content="Resume of Abhishek Mishra — Solutions Architect at Sigmoid. AI solutions & intelligent data platforms, agentic AI, Databricks & Spark.">
 <meta property="og:url" content="https://abhishek021.github.io/mycv.html">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://abhishek021.github.io/headshot.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://abhishek021.github.io/headshot.jpg">
+<script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('theme')||'dark')}catch(e){document.documentElement.setAttribute('data-theme','dark')}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="theme.css">
 </head>
 <body>
-<div class="progress" aria-hidden="true"></div>
+<div class="backdrop" aria-hidden="true"></div>
 <div class="cursor-glow" aria-hidden="true"></div>
-
+<div class="progress" aria-hidden="true"></div>
 <header class="nav">
   <div class="wrap nav-inner">
     <a class="brand" href="index.html">abhishek<b>.mishra</b></a>
     <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
-    <nav><ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="index.html#expertise">Expertise</a></li>
-      <li><a href="index.html#work">Work</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="mycv.html" class="active">Resume</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-    </ul></nav>
+    <div class="nav-right">
+      <nav><ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#expertise">Expertise</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="mycv.html" class="active">Resume</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul></nav>
+      <button class="theme-toggle" aria-label="Toggle dark / light theme">☀</button>
+    </div>
   </div>
 </header>
 <main>
-<!-- HEADER -->
 <section class="rs-head">
   <div class="wrap">
-    <p class="eyebrow">// Resume</p>
-    <h1>Abhishek Mishra</h1>
-    <p class="hero-role" style="margin-bottom:6px">Solutions Architect <span class="sep">//</span> AI Solutions &amp; Intelligent Data Platforms</p>
+    <div class="about-strip" style="margin-bottom:14px">
+      <img class="about-portrait" src="headshot.jpg" alt="Abhishek Mishra" width="120" height="120" style="width:96px;height:96px">
+      <div>
+        <p class="eyebrow">// Resume</p>
+        <h1 style="margin-bottom:8px">Abhishek Mishra</h1>
+        <p class="hero-role" style="margin-bottom:0;font-size:1rem;color:var(--ink)">Solutions Architect — AI Solutions &amp; Intelligent Data Platforms</p>
+      </div>
+    </div>
     <div class="rs-contact-row">
       <a href="mailto:mishraabhishek.mishra021@gmail.com">✉ mishraabhishek.mishra021@gmail.com</a>
       <a href="https://www.linkedin.com/in/abhi021" target="_blank" rel="noopener">in linkedin.com/in/abhi021</a>
       <a href="https://github.com/abhishek021" target="_blank" rel="noopener">&lt;&gt; github.com/abhishek021</a>
       <span>📍 Bengaluru, India</span>
     </div>
-    <div class="btn-row" style="margin-top:24px">
+    <div class="btn-row" style="margin-top:26px">
       <a class="btn btn-primary" href="Profile.pdf" download>Download PDF ↓</a>
       <a class="btn btn-ghost" href="index.html#contact">Contact</a>
     </div>
@@ -57,54 +67,47 @@
 </section>
 
 <div class="wrap">
-
-  <!-- SUMMARY -->
-  <section class="rs-section reveal" style="padding-top:0">
+  <section class="rs-section reveal" style="padding-top:0;border-top:none">
     <h2>Summary <span class="mono">// PROFILE</span></h2>
-    <p style="color:var(--ink-soft);max-width:780px;margin-bottom:12px">Solutions Architect with eight years spanning hands-on data engineering through platform and solution architecture, delivering for global CPG and pharmaceutical enterprises where data is high-volume, regulated, and commercially critical. I design intelligent data platforms on Databricks and Spark, and bring agentic AI into production — multi-agent systems, permission-aware RAG, and self-healing operations — across the full lifecycle of data engineering, AI/ML enablement, and the operational foundations (DataOps, MLOps, LLMOps, AIOps) that keep enterprise platforms dependable.</p>
-    <p style="color:var(--ink-soft);max-width:780px">My strength is converting sprawling, hard-to-trust data estates into governed, observable, production-grade platforms that business teams rely on — combining deep engineering with architectural judgment. I also care deeply about people: in partnership with L&amp;D, I have owned the intern-to-full-time journey end to end, from hiring bars and technical assessments through structured training and mentorship to conversion, growing young engineers into strong contributors.</p>
+    <p style="color:var(--ink-soft);max-width:800px;margin-bottom:12px">I design scalable, governed data and AI platforms, with 8 years of experience evolving from hands-on data engineering into platform and solution architecture. My work spans the full platform lifecycle — data engineering, AI/ML enablement, and the operational foundations (DataOps, MLOps, LLMOps, AIOps) that keep enterprise platforms reliable in production.</p>
+    <p style="color:var(--ink-soft);max-width:800px">Today I architect enterprise-grade AI solutions and intelligent data platforms on Databricks and Spark for global CPG and pharma clients, while bringing agentic systems into production to drive self-healing, zero-touch operations. Beyond the technology, I have led the intern-to-full-time journey end to end — hiring, technical assessment, training, mentorship, and conversion — helping new engineers grow into strong contributors.</p>
   </section>
 
-  <!-- EXPERIENCE -->
   <section class="rs-section reveal">
     <h2>Experience <span class="mono">// SIGMOID · 8 YRS</span></h2>
     <div class="timeline">
-
       <div class="tl-item now">
         <span class="tl-when">JAN 2026 — PRESENT · 6 mos</span>
         <h3>Solutions Architect</h3>
         <p class="tl-role-meta">Sigmoid · Bengaluru, India · Hybrid</p>
-        <p>Architecting enterprise-grade AI solutions and intelligent data platforms for CPG and pharmaceutical clients, and reimagining platform engineering with agentic systems. I own solution design for scalable, resilient platforms spanning data engineering, AI engineering, and DataOps — embedding governance, observability, and automation by default, and putting agentic AI to work to drive self-healing, zero-touch operations. The remit blends client-facing architecture, hands-on technical direction, and shaping how the organization adopts agentic AI in production.</p>
+        <p>Architecting enterprise-grade AI solutions and intelligent data platforms, and reimagining platform engineering with agentic systems. Own the design of scalable, resilient platforms spanning data engineering, AI engineering, and DataOps — embedding governance, observability, and automation, and leveraging agentic AI to drive self-healing, zero-touch operations for global CPG and pharma clients.</p>
         <div class="tl-skills"><span>Agentic AI</span><span>Solution Architecture</span><span>Databricks</span><span>Governance</span><span>Observability</span></div>
       </div>
-
       <div class="tl-item">
         <span class="tl-when">JAN 2024 — DEC 2025 · 2 yrs</span>
         <h3>Data Operations &amp; Engineering Lead</h3>
         <p class="tl-role-meta">Sigmoid · Bengaluru, India · On-site</p>
         <ul>
           <li>Led a 10+ engineer team, owning delivery across the full data lifecycle — from ingestion and pipeline reliability to production support and platform governance.</li>
-          <li>Drove a large-scale data platform modernization on Databricks (Unity Catalog, Delta Live Tables, Asset Bundles), establishing governed, observable, production-grade standards.</li>
+          <li>Drove a large-scale platform modernization on Databricks (Unity Catalog, Delta Live Tables, Asset Bundles), establishing governed, observable, production-grade standards.</li>
           <li>Built the team from the ground up — defining hiring bars, onboarding engineers, and shaping the technical practices that scaled delivery.</li>
-          <li>Introduced GenAI and LLMOps capabilities into operational workflows, applying LLMs and agentic patterns to improve automation, triage, and self-healing.</li>
-          <li>Partnered with the L&amp;D team to design and run a structured intern-to-full-time program — hiring, technical assessment, training, mentorship, and conversion.</li>
+          <li>Introduced GenAI and LLMOps into operational workflows, applying LLMs and agentic patterns to improve automation, triage, and self-healing.</li>
+          <li>Partnered with L&amp;D to design and run a structured intern-to-full-time program — hiring through assessment, training, mentorship, and conversion.</li>
         </ul>
         <div class="tl-skills"><span>Team Leadership</span><span>Unity Catalog</span><span>DLT</span><span>Asset Bundles</span><span>LLMOps</span></div>
       </div>
-
       <div class="tl-item">
         <span class="tl-when">JAN 2023 — DEC 2023 · 1 yr</span>
         <h3>Senior Data Operations Engineer</h3>
         <p class="tl-role-meta">Sigmoid · Bengaluru, India · Hybrid</p>
         <ul>
-          <li>Designed and operated production data pipelines on Databricks, applying data modeling and engineering best practices to improve reliability and maintainability.</li>
+          <li>Designed and operated production pipelines on Databricks, applying data modeling and engineering best practices to improve reliability and maintainability.</li>
           <li>Implemented security architecture and access-governance controls across data platforms, strengthening compliance and auditability.</li>
           <li>Drove automation across operational workflows, reducing manual intervention and improving pipeline stability and recovery.</li>
-          <li>Mentored junior engineers, establishing engineering standards that raised the quality bar for pipeline development.</li>
+          <li>Mentored junior engineers, establishing standards that raised the quality bar for pipeline development.</li>
         </ul>
         <div class="tl-skills"><span>Databricks</span><span>Security Architecture</span><span>Data Modeling</span><span>Automation</span></div>
       </div>
-
       <div class="tl-item">
         <span class="tl-when">AUG 2021 — DEC 2022 · 1 yr 5 mos</span>
         <h3>DataOps Engineer II</h3>
@@ -112,23 +115,21 @@
         <ul>
           <li>Migrated Python pipelines to Databricks to leverage ACID transactions, schema evolution, merge/update/delete DML, scalable metadata, and delta-log auditing.</li>
           <li>Optimized PySpark and Delta workloads over billions of rows using partitioning, OPTIMIZE, and time travel.</li>
-          <li>Invoked and orchestrated Databricks jobs from Airflow using job and all-purpose clusters; managed AWS web servers with performance monitoring.</li>
+          <li>Orchestrated Databricks jobs from Airflow using job and all-purpose clusters; managed AWS web servers with performance monitoring.</li>
         </ul>
         <div class="tl-skills"><span>PySpark</span><span>Delta Lake</span><span>Airflow</span><span>AWS</span></div>
       </div>
-
       <div class="tl-item">
         <span class="tl-when">MAR 2019 — SEP 2021 · 2 yrs 7 mos</span>
         <h3>DevOps Engineer</h3>
         <p class="tl-role-meta">Sigmoid · Bengaluru, India</p>
         <ul>
           <li>Set up and managed AWS Hadoop clusters running TB-scale ETL pipelines for multiple customers.</li>
-          <li>Implemented zero-trust security, bastion-host architecture, and Grafana-based log auditing with continuous monitoring of AWS resources.</li>
+          <li>Implemented zero-trust security, bastion-host architecture, and Grafana-based log auditing with continuous monitoring.</li>
           <li>Ran PoCs that brought new technology into the stack — Alluxio caching, Databricks Delta Lake — and deployed Hadoop, Kubernetes monitoring, and GitLab estates.</li>
         </ul>
         <div class="tl-skills"><span>Hadoop</span><span>AWS</span><span>Zero Trust</span><span>Kubernetes</span><span>Grafana</span></div>
       </div>
-
       <div class="tl-item">
         <span class="tl-when">JUL 2018 — FEB 2019 · 8 mos</span>
         <h3>Technical Support Engineer</h3>
@@ -139,56 +140,36 @@
         </ul>
         <div class="tl-skills"><span>GCP</span><span>AWS</span><span>Spark</span><span>Shell</span></div>
       </div>
-
     </div>
   </section>
 
-  <!-- SKILLS -->
   <section class="rs-section reveal">
     <h2>Skills &amp; tools <span class="mono">// STACK</span></h2>
     <div class="grid-2">
       <div class="card skill-card">
         <h3>Data &amp; AI Platform</h3>
-        <div class="chips">
-          <span class="chip-t">Databricks</span><span class="chip-t">Unity Catalog</span><span class="chip-t">Delta Live Tables</span>
-          <span class="chip-t">Asset Bundles</span><span class="chip-t">Agent Bricks</span><span class="chip-t">Databricks Genie</span>
-          <span class="chip-t">Apache Spark</span><span class="chip-t">PySpark</span><span class="chip-t">Airflow</span>
-        </div>
+        <div class="chips"><span class="chip-t">Databricks</span><span class="chip-t">Unity Catalog</span><span class="chip-t">Delta Live Tables</span><span class="chip-t">Asset Bundles</span><span class="chip-t">Agent Bricks</span><span class="chip-t">Databricks Genie</span><span class="chip-t">Apache Spark</span><span class="chip-t">PySpark</span><span class="chip-t">Airflow</span></div>
       </div>
       <div class="card skill-card">
         <h3>Agentic AI &amp; ML</h3>
-        <div class="chips">
-          <span class="chip-t">LangChain</span><span class="chip-t">LangGraph</span><span class="chip-t">LangSmith</span>
-          <span class="chip-t">RAG</span><span class="chip-t">MCP</span><span class="chip-t">MLflow</span>
-          <span class="chip-t">GenAI</span><span class="chip-t">MLOps</span><span class="chip-t">LLMOps</span>
-        </div>
+        <div class="chips"><span class="chip-t">LangChain</span><span class="chip-t">LangGraph</span><span class="chip-t">LangSmith</span><span class="chip-t">RAG</span><span class="chip-t">MCP</span><span class="chip-t">MLflow</span><span class="chip-t">GenAI</span><span class="chip-t">MLOps</span><span class="chip-t">LLMOps</span></div>
       </div>
       <div class="card skill-card">
         <h3>Cloud &amp; DevOps</h3>
-        <div class="chips">
-          <span class="chip-t">AWS</span><span class="chip-t">Azure</span><span class="chip-t">GCP</span>
-          <span class="chip-t">CI/CD</span><span class="chip-t">Azure DevOps</span><span class="chip-t">Kubernetes</span>
-          <span class="chip-t">Terraform</span><span class="chip-t">Docker</span><span class="chip-t">Grafana</span>
-        </div>
+        <div class="chips"><span class="chip-t">AWS</span><span class="chip-t">Azure</span><span class="chip-t">GCP</span><span class="chip-t">CI/CD</span><span class="chip-t">Azure DevOps</span><span class="chip-t">Kubernetes</span><span class="chip-t">Terraform</span><span class="chip-t">Docker</span><span class="chip-t">Grafana</span></div>
       </div>
       <div class="card skill-card">
         <h3>Languages &amp; foundations</h3>
-        <div class="chips">
-          <span class="chip-t">Python</span><span class="chip-t">SQL</span><span class="chip-t">Shell</span>
-          <span class="chip-t">Systems Design</span><span class="chip-t">Enterprise Architecture</span><span class="chip-t">Security Architecture</span>
-          <span class="chip-t">Linux Admin</span>
-        </div>
+        <div class="chips"><span class="chip-t">Python</span><span class="chip-t">SQL</span><span class="chip-t">Shell</span><span class="chip-t">Systems Design</span><span class="chip-t">Enterprise Architecture</span><span class="chip-t">Security Architecture</span><span class="chip-t">Linux Admin</span></div>
       </div>
     </div>
   </section>
 
-  <!-- LEADERSHIP -->
   <section class="rs-section reveal">
     <h2>Leadership &amp; people <span class="mono">// BEYOND TECH</span></h2>
-    <p style="color:var(--ink-soft);max-width:780px">In partnership with the L&amp;D team, I have led the intern-to-full-time journey end to end — from hiring and technical assessments to structured training, mentorship, and full-time conversion — helping young talent enter the organization, build confidence, and grow into strong engineers.</p>
+    <p style="color:var(--ink-soft);max-width:800px">In partnership with the L&amp;D team, I have led the intern-to-full-time journey end to end — from hiring and technical assessments to structured training, mentorship, and full-time conversion — helping young talent enter the organization, build confidence, and grow into strong engineers.</p>
   </section>
 
-  <!-- EDUCATION -->
   <section class="rs-section reveal">
     <h2>Education <span class="mono">// FOUNDATIONS</span></h2>
     <div class="edu-item">
@@ -198,12 +179,10 @@
     </div>
   </section>
 
-  <!-- LANGUAGES -->
   <section class="rs-section reveal">
     <h2>Languages <span class="mono">// SPOKEN</span></h2>
     <p style="color:var(--ink-soft)">English (Full Professional) · Hindi (Native / Bilingual) · Bengali</p>
   </section>
-
 </div>
 </main>
 <a class="to-top" href="#" aria-label="Back to top">↑</a>

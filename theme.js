@@ -1,8 +1,32 @@
 /* ============================================
-   Abhishek Mishra — interactions (clean v5)
+   Abhishek Mishra — interactions (v7 · dual theme)
    ============================================ */
+
+/* theme: apply early to avoid flash (also inlined in <head>) */
 (() => {
+  try {
+    const saved = localStorage.getItem('theme');
+    const theme = saved || 'dark';
+    document.documentElement.setAttribute('data-theme', theme);
+  } catch (e) { document.documentElement.setAttribute('data-theme', 'dark'); }
+})();
+
+document.addEventListener('DOMContentLoaded', () => {
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hover = matchMedia('(hover: hover)').matches;
+  const root = document.documentElement;
+
+  /* theme toggle */
+  const setIcon = btn => { btn.textContent = root.getAttribute('data-theme') === 'dark' ? '☀' : '☾'; };
+  document.querySelectorAll('.theme-toggle').forEach(btn => {
+    setIcon(btn);
+    btn.addEventListener('click', () => {
+      const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      document.querySelectorAll('.theme-toggle').forEach(setIcon);
+    });
+  });
 
   /* mobile nav */
   const toggle = document.querySelector('.nav-toggle');
@@ -13,20 +37,25 @@
       toggle.setAttribute('aria-expanded', open);
     });
     links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      links.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
+      links.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false');
     }));
   }
 
-  /* nav border on scroll */
+  /* nav border + progress + back-to-top */
   const nav = document.querySelector('header.nav');
-  const onScroll = () => { if (nav) nav.classList.toggle('scrolled', scrollY > 8); };
+  const progress = document.querySelector('.progress');
+  const toTop = document.querySelector('.to-top');
+  const onScroll = () => {
+    const y = scrollY;
+    if (nav) nav.classList.toggle('scrolled', y > 8);
+    if (progress) { const max = document.documentElement.scrollHeight - innerHeight; progress.style.transform = `scaleX(${max > 0 ? y / max : 0})`; }
+    if (toTop) toTop.classList.toggle('show', y > 500);
+  };
   addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  /* scrollspy for in-page hash links */
-  const spyLinks = [...document.querySelectorAll('.nav-links a[href^="#"]')]
-    .filter(a => a.getAttribute('href').length > 1);
+  /* scrollspy */
+  const spyLinks = [...document.querySelectorAll('.nav-links a[href^="#"]')].filter(a => a.getAttribute('href').length > 1);
   if (spyLinks.length) {
     const sections = spyLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
     const spy = new IntersectionObserver(entries => {
@@ -40,7 +69,7 @@
     sections.forEach(s => spy.observe(s));
   }
 
-  /* staggered scroll reveal */
+  /* reveal */
   const reveals = document.querySelectorAll('.reveal');
   const ro = new IntersectionObserver(entries => {
     entries.forEach(e => {
@@ -48,8 +77,7 @@
       const el = e.target;
       const sibs = [...el.parentElement.children].filter(c => c.classList.contains('reveal'));
       el.style.transitionDelay = reduced ? '0ms' : Math.min(sibs.indexOf(el) * 70, 350) + 'ms';
-      el.classList.add('in');
-      ro.unobserve(el);
+      el.classList.add('in'); ro.unobserve(el);
     });
   }, { threshold: 0.12 });
   reveals.forEach(el => ro.observe(el));
@@ -61,83 +89,19 @@
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
         const el = entry.target;
-        const target = +el.dataset.count;
-        const suffix = el.dataset.suffix || '';
-        if (reduced) { el.textContent = target + suffix; co.unobserve(el); return; }
-        const dur = 1100, start = performance.now();
+        const target = +el.dataset.count, suffix = el.dataset.suffix || '', prefix = el.dataset.prefix || '';
+        if (reduced) { el.textContent = prefix + target + suffix; co.unobserve(el); return; }
+        const dur = 1200, start = performance.now();
         const tick = now => {
           const p = Math.min((now - start) / dur, 1);
-          el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))) + suffix;
+          el.textContent = prefix + Math.round(target * (1 - Math.pow(1 - p, 3))) + suffix;
           if (p < 1) requestAnimationFrame(tick);
         };
-        requestAnimationFrame(tick);
-        co.unobserve(el);
+        requestAnimationFrame(tick); co.unobserve(el);
       });
     }, { threshold: 0.6 });
     counters.forEach(el => co.observe(el));
   }
-
-  /* click-to-copy buttons */
-  document.querySelectorAll('.copy-btn').forEach(btn => {
-    btn.addEventListener('click', async () => {
-      const text = btn.dataset.copy || '';
-      const done = () => {
-        const orig = btn.textContent;
-        btn.textContent = 'Copied ✓';
-        btn.classList.add('copied');
-        setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 1600);
-      };
-      try {
-        if (navigator.clipboard && isSecureContext) {
-          await navigator.clipboard.writeText(text);
-        } else {
-          const ta = document.createElement('textarea');
-          ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
-          document.body.appendChild(ta); ta.select();
-          document.execCommand('copy'); document.body.removeChild(ta);
-        }
-        done();
-      } catch (e) { /* clipboard blocked — link still works */ }
-    });
-  });
-
-  /* contact form → mailto */
-  const form = document.getElementById('contact-form');
-  if (form && form.dataset.mailto) {
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      const g = n => (form.querySelector(`[name="${n}"]`) || {}).value || '';
-      const name = g('name').trim(), email = g('email').trim(), message = g('message').trim();
-      const subject = encodeURIComponent(`Website inquiry from ${name}`);
-      const body = encodeURIComponent(`${message}\n\n— ${name}\n${email}`);
-      const note = document.getElementById('form-note');
-      if (note) note.classList.add('show');
-      location.href = `mailto:${form.dataset.mailto}?subject=${subject}&body=${body}`;
-    });
-  }
-})();
-
-
-/* ============================================
-   v6 — interactivity (light-tuned)
-   ============================================ */
-(() => {
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const hover = matchMedia('(hover: hover)').matches;
-
-  /* progress bar + back-to-top */
-  const progress = document.querySelector('.progress');
-  const toTop = document.querySelector('.to-top');
-  const onScroll2 = () => {
-    const y = scrollY;
-    if (progress) {
-      const max = document.documentElement.scrollHeight - innerHeight;
-      progress.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
-    }
-    if (toTop) toTop.classList.toggle('show', y > 500);
-  };
-  addEventListener('scroll', onScroll2, { passive: true });
-  onScroll2();
 
   /* cursor spotlight */
   const glow = document.querySelector('.cursor-glow');
@@ -149,15 +113,14 @@
       raf = (Math.abs(tx - gx) > 0.5 || Math.abs(ty - gy) > 0.5) ? requestAnimationFrame(lerp) : null;
     };
     addEventListener('pointermove', e => {
-      document.body.classList.add('has-pointer');
-      tx = e.clientX; ty = e.clientY;
+      document.body.classList.add('has-pointer'); tx = e.clientX; ty = e.clientY;
       if (!raf) raf = requestAnimationFrame(lerp);
     }, { passive: true });
   }
 
-  /* card spotlight tracking */
+  /* card spotlight */
   if (!reduced && hover) {
-    document.querySelectorAll('.card').forEach(card => {
+    document.querySelectorAll('.card,.demo').forEach(card => {
       card.addEventListener('pointermove', e => {
         const r = card.getBoundingClientRect();
         card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
@@ -166,28 +129,56 @@
     });
   }
 
-  /* hero typing rotator */
-  const typed = document.querySelector('.typed');
-  if (typed) {
-    let phrases = [];
-    try { phrases = JSON.parse(typed.dataset.phrases || '[]'); } catch (e) {}
-    if (!phrases.length) phrases = [typed.textContent];
-    if (reduced || phrases.length < 2) { typed.textContent = phrases[0]; }
-    else {
-      let pi = 0, ci = phrases[0].length, del = false;
-      typed.textContent = phrases[0];
-      const T = 52, D = 28, HOLD = 2100, GAP = 320;
-      const step = () => {
-        const w = phrases[pi];
-        if (!del) { ci++; typed.textContent = w.slice(0, ci);
-          if (ci >= w.length) { del = true; setTimeout(step, HOLD); return; }
-          setTimeout(step, T);
-        } else { ci--; typed.textContent = w.slice(0, ci);
-          if (ci <= 0) { del = false; pi = (pi + 1) % phrases.length; setTimeout(step, GAP); return; }
-          setTimeout(step, D);
-        }
-      };
-      setTimeout(step, HOLD);
-    }
+  /* code panel tabs */
+  document.querySelectorAll('.code-tabs').forEach(tabs => {
+    const panel = tabs.closest('.code-panel');
+    tabs.querySelectorAll('.code-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.querySelectorAll('.code-tab').forEach(t => t.classList.remove('on'));
+        panel.querySelectorAll('.code-pane').forEach(p => p.classList.remove('on'));
+        tab.classList.add('on');
+        const pane = panel.querySelector('#' + tab.dataset.pane);
+        if (pane) pane.classList.add('on');
+      });
+    });
+  });
+
+  /* demo cards: restart animations on a loop so they feel "live" */
+  if (!reduced) {
+    const demos = document.querySelectorAll('.demo .demo-body');
+    demos.forEach((body, i) => {
+      const html = body.innerHTML;
+      const restart = () => { body.innerHTML = ''; void body.offsetWidth; body.innerHTML = html; };
+      setInterval(restart, 7000 + i * 400);
+    });
   }
-})();
+
+  /* click-to-copy */
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const text = btn.dataset.copy || '';
+      const done = () => {
+        const orig = btn.textContent; btn.textContent = 'Copied ✓'; btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 1600);
+      };
+      try {
+        if (navigator.clipboard && isSecureContext) await navigator.clipboard.writeText(text);
+        else { const ta = document.createElement('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); }
+        done();
+      } catch (e) {}
+    });
+  });
+
+  /* contact form → mailto */
+  const form = document.getElementById('contact-form');
+  if (form && form.dataset.mailto) {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const g = n => (form.querySelector(`[name="${n}"]`) || {}).value || '';
+      const subject = encodeURIComponent(`Website inquiry from ${g('name').trim()}`);
+      const body = encodeURIComponent(`${g('message').trim()}\n\n— ${g('name').trim()}\n${g('email').trim()}`);
+      const note = document.getElementById('form-note'); if (note) note.classList.add('show');
+      location.href = `mailto:${form.dataset.mailto}?subject=${subject}&body=${body}`;
+    });
+  }
+});
