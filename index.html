@@ -59,7 +59,7 @@
     <!-- LIVE DEMO CARDS -->
     <div class="demos">
 
-      <div class="demo reveal">
+      <a class="demo reveal" href="projects.html">
         <div class="demo-head"><span class="dot"></span><span class="label">order-agent</span></div>
         <div class="demo-body">
           <div class="bubble q">New PO · 480 cases · retailer EDI</div>
@@ -68,9 +68,9 @@
           <div class="bubble a b4">↳ substituted · order confirmed</div>
         </div>
         <div class="demo-foot"><span class="name">Agentic Orders</span><span class="go">→</span></div>
-      </div>
+      </a>
 
-      <div class="demo reveal">
+      <a class="demo reveal" href="projects.html">
         <div class="demo-head"><span class="dot"></span><span class="label">self-heal</span></div>
         <div class="demo-body">
           <div class="step"><span class="s-ic">▸</span><span>detect schema drift</span></div>
@@ -79,9 +79,9 @@
           <div class="step s4 done"><span class="s-ic">✓</span><span>repaired<span class="cursor-blink"></span></span></div>
         </div>
         <div class="demo-foot"><span class="name">Self-Healing Pipeline</span><span class="go">→</span></div>
-      </div>
+      </a>
 
-      <div class="demo reveal">
+      <a class="demo reveal" href="projects.html">
         <div class="demo-head"><span class="dot"></span><span class="label">genie</span></div>
         <div class="demo-body">
           <div class="bubble q">Top 3 brands by Q4 share?</div>
@@ -90,9 +90,9 @@
           <div class="result-row b3"><span>Aurora</span><span>23.4%</span></div>
         </div>
         <div class="demo-foot"><span class="name">NL Analytics</span><span class="go">→</span></div>
-      </div>
+      </a>
 
-      <div class="demo reveal">
+      <a class="demo reveal" href="projects.html">
         <div class="demo-head"><span class="dot"></span><span class="label">rag · scoped</span></div>
         <div class="demo-body">
           <div class="acc-row"><span>Query: batch QA record</span></div>
@@ -101,7 +101,7 @@
           <div class="acc-row r3"><span>Clinical PII</span><span class="badge-no">scoped</span></div>
         </div>
         <div class="demo-foot"><span class="name">Permission-Aware RAG</span><span class="go">→</span></div>
-      </div>
+      </a>
 
     </div>
   </div>
@@ -112,9 +112,9 @@
   <div class="wrap">
     <div class="stats-grid">
       <div class="reveal"><div class="n" data-count="8" data-suffix="+">0</div><p>Years in data &amp; platforms</p></div>
-      <div class="reveal"><div class="n" data-count="10" data-suffix="+">0</div><p>Engineers led &amp; mentored</p></div>
-      <div class="reveal"><div class="n" data-count="3">0</div><p>Clouds — AWS · Azure · GCP</p></div>
-      <div class="reveal"><div class="n" data-count="5" data-suffix="+">0</div><p>Agentic-AI systems shipped</p></div>
+      <div class="reveal"><div class="n" data-count="18" data-suffix="+">0</div><p>Engineers led</p></div>
+      <div class="reveal"><div class="n" data-count="40" data-suffix="+">0</div><p>Interns mentored &amp; assessed</p></div>
+      <div class="reveal"><div class="n" data-count="40" data-suffix="+">0</div><p>Interns mentored &amp; assessed</p></div>
     </div>
   </div>
 </div>
@@ -239,8 +239,8 @@ app = g.<span class="fn">compile</span>(checkpointer=traced_store)</pre></div>
       <a class="card proj reveal" href="projects.html">
         <p class="cat">CPG · Agentic AI</p>
         <h3>Agentic Order Management</h3>
-        <p>Multi-agent platform that runs CPG order intake end to end — agents validate, catch exceptions, and resolve routine issues with no human in the loop, so order desks clear volume and customers get faster fulfillment. Every decision traced with LangSmith and MLflow.</p>
-        <div class="stack"><span>LangGraph</span><span>LangChain</span><span>MLflow</span></div>
+        <p>A multi-agent system where specialized LangGraph agents handle distinct user intents — routing each request to the right agent at runtime, maintaining session state across turns, and persisting conversation history and user context in a relational database. Complex multi-step workflows run through LangGraph graphs and subgraphs, with full LangSmith traceability over every LLM call, tool invocation, and prompt, plus a monitoring dashboard and CI/CD that automates testing, LLM evaluation, and deployment.</p>
+        <div class="stack"><span>LangGraph</span><span>LangSmith</span><span>PostgreSQL</span><span>CI/CD</span></div>
         <span class="go">Explore →</span>
       </a>
       <a class="card proj reveal" href="projects.html">
