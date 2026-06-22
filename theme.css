@@ -375,13 +375,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 
 /* project architecture diagram */
 .proj-diagram{margin:-26px -26px 20px;padding:22px 24px 20px;background:var(--code-bg);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
-.proj-diagram svg{width:100%;height:auto;display:block}
+.proj-diagram svg{width:100%;height:auto;display:block;max-height:150px}
 .dg-node{fill:var(--surface);stroke:var(--line);stroke-width:1.4}
 .dg-node-ai{fill:var(--accent-soft);stroke:color-mix(in srgb,var(--accent) 45%,transparent);stroke-width:1.4}
 .dg-lane{stroke:var(--line);stroke-width:1.4;fill:none}
 .dg-flow{fill:none;stroke:var(--accent);stroke-width:1.8;stroke-linecap:round;stroke-dasharray:5 7;animation:dgflow 1.4s linear infinite}
 @keyframes dgflow{to{stroke-dashoffset:-24}}
-.dg-label{font-family:var(--font-mono);font-size:9.5px;fill:var(--ink-faint);letter-spacing:.04em}
+.dg-label{font-family:var(--font-mono);font-size:9px;fill:var(--ink-faint);letter-spacing:.02em}
 .dg-title{font-family:var(--font-mono);font-size:10px;fill:var(--ink-soft);font-weight:500}
 .dg-layer-b{fill:var(--bronze)}.dg-layer-s{fill:var(--silver)}.dg-layer-g{fill:var(--gold)}
 @media (prefers-reduced-motion:reduce){.dg-flow{animation:none}}
@@ -391,3 +391,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 .hero-meta .hero-portrait{margin-right:4px}
 .about-strip{display:flex;gap:28px;align-items:center;flex-wrap:wrap}
 .about-portrait{width:120px;height:120px;border-radius:20px;object-fit:cover;border:1px solid var(--line);box-shadow:var(--shadow);flex-shrink:0}
+
+/* anchored sections clear sticky nav */
+section[id]{scroll-margin-top:80px}
