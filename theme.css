@@ -231,10 +231,10 @@ h3{font-family:var(--font-display);font-weight:600}
 .proj-head.label .ph-dots{position:absolute;right:18px;top:16px;display:flex;gap:6px}
 .proj-head.label .ph-dots i{width:7px;height:7px;border-radius:50%;background:var(--line)}
 .proj-body{padding:24px 26px 26px;display:flex;flex-direction:column;flex:1}
-.proj .cat{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;min-height:1.1em}
-.proj h3{font-size:1.1rem;margin-bottom:11px;color:var(--ink);line-height:1.25;min-height:2.5em;display:flex;align-items:flex-start}
-.proj p{color:var(--ink-soft);font-size:.9rem;flex:1;line-height:1.62}
-.proj .stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+.proj .cat{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.proj h3{font-size:1.1rem;margin-bottom:11px;color:var(--ink);line-height:1.3}
+.proj p{color:var(--ink-soft);font-size:.9rem;line-height:1.62}
+.proj .stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:18px}
 .proj .stack span{font-family:var(--font-mono);font-size:.66rem;color:var(--ink-faint);border:1px solid var(--line);border-radius:6px;padding:3px 8px}
 a.proj .go{margin-top:18px;font-weight:600;font-size:.84rem;color:var(--accent);display:inline-flex;gap:6px;transition:gap .18s}
 a.proj:hover .go{gap:10px}
